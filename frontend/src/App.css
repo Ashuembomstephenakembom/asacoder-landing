@@ -1,0 +1,168 @@
+/* App component styles for ASACODER landing page */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-padding-top: 70px; /* Prevents navbar from hiding content when scrolling to anchors */
+}
+
+/* Custom Scrollbar with Arrows */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Scrollbar Arrow Buttons */
+::-webkit-scrollbar-button:single-button {
+  background-color: #f1f1f1;
+  display: block;
+  border-style: solid;
+  height: 16px;
+  width: 16px;
+}
+
+/* Up Arrow */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent #667eea transparent;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  border-color: transparent transparent #764ba2 transparent;
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:active {
+  border-color: transparent transparent #5a6fd8 transparent;
+  background: linear-gradient(135deg, #dee2e6 0%, #ced4da 100%);
+}
+
+/* Down Arrow */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 8px 8px 0 8px;
+  border-color: #667eea transparent transparent transparent;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+  border-color: #764ba2 transparent transparent transparent;
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:active {
+  border-color: #5a6fd8 transparent transparent transparent;
+  background: linear-gradient(135deg, #dee2e6 0%, #ced4da 100%);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #667eea #f1f1f1;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px; /* Account for fixed navbar height */
+}
+
+/* Section spacing */
+section {
+  padding: 4rem 0;
+}
+
+/* Section with background color */
+section.bg-light {
+  background-color: #f8f9fa;
+}
+
+section.bg-dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Section with gradient background */
+section.bg-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+
+/* Responsive section padding */
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* Container for sections */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 1rem;
+  }
+}
+
+/* Section headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Dark theme adjustments */
+section.bg-dark .section-title,
+section.bg-gradient .section-title {
+  color: #ffffff;
+}
+
+section.bg-dark .section-subtitle,
+section.bg-gradient .section-subtitle {
+  color: #cccccc;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
