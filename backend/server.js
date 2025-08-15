@@ -74,17 +74,21 @@ app.get('/admin', (req, res) => {
 
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`🌐 Production URL: https://api.asacoder.xyz`);
-  console.log(`📊 MongoDB: ${process.env.MONGODB_URI ? 'Configured' : 'Not configured'}`);
+  console.log(`🚀 ASACODER Backend Server Started`);
+  console.log(`📍 Port: ${PORT}`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`📊 MongoDB: ${process.env.MONGODB_URI ? 'Configured' : 'Demo Mode'}`);
+  console.log(`🔒 CORS Origins: ${process.env.CORS_ORIGIN || 'Default'}`);
   
   // Show database name from connection string if available
   if (process.env.MONGODB_URI) {
     try {
       const dbName = process.env.MONGODB_URI.split('/').pop().split('?')[0];
-      console.log(`🗄️  Database Name: ${dbName}`);
+      console.log(`🗄️  Database: ${dbName}`);
     } catch (error) {
-      console.log(`🗄️  Database Name: Unable to parse from connection string`);
+      console.log(`🗄️  Database: Unable to parse connection string`);
     }
   }
+  
+  console.log(`✅ Server ready to handle requests`);
 });
