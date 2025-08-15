@@ -27,26 +27,29 @@ const Contact = () => {
 
   // Get backend URL with production support
   const getBackendUrl = () => {
+    let backendUrl;
+    
     // PRODUCTION: Use environment variable or fallback to your domain
     if (import.meta.env.VITE_API_URL) {
-      return import.meta.env.VITE_API_URL;
+      backendUrl = import.meta.env.VITE_API_URL;
+    } else {
+      // DEVELOPMENT: Check if we're in development
+      const hostname = window.location.hostname
+      if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        backendUrl = 'http://localhost:5000'
+      } else if (hostname.includes('ngrok-free.app')) {
+        // DEVELOPMENT: Check for ngrok tunnel
+        const protocol = window.location.protocol
+        backendUrl = `${protocol}//${hostname}:5000`
+      } else {
+        // PRODUCTION: Fallback to your domain
+        // Updated with actual Heroku app URL
+        backendUrl = 'https://asacoderbackend.herokuapp.com'
+      }
     }
     
-    // DEVELOPMENT: Check if we're in development
-    const hostname = window.location.hostname
-    if (hostname === 'localhost' || hostname === '127.0.0.1') {
-      return 'http://localhost:5000'
-    }
-    
-    // DEVELOPMENT: Check for ngrok tunnel
-    if (hostname.includes('ngrok-free.app')) {
-      const protocol = window.location.protocol
-      return `${protocol}//${hostname}:5000`
-    }
-    
-    // PRODUCTION: Fallback to your domain
-    // Updated with actual Heroku app URL
-    return 'https://asacoderbackend.herokuapp.com'
+    // Remove trailing slash to prevent double slashes
+    return backendUrl.replace(/\/$/, '')
   }
 
   // Handle form submission
