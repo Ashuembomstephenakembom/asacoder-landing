@@ -52,6 +52,49 @@ app.get('/', (req, res) => {
   });
 });
 
+// Simple contact form endpoint that works without MongoDB
+app.post('/api/contact/submit', (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+    
+    // Validate required fields
+    if (!name || !email || !message) {
+      return res.status(400).json({
+        success: false,
+        message: 'Name, email, and message are required'
+      });
+    }
+    
+    // Log the contact form submission
+    console.log('✅ New contact form submission:', {
+      name,
+      email,
+      message,
+      timestamp: new Date().toISOString(),
+      ipAddress: req.ip || req.connection.remoteAddress,
+      userAgent: req.get('User-Agent')
+    });
+    
+    // Send success response
+    res.status(200).json({
+      success: true,
+      message: 'Thank you for your message! I will get back to you soon.',
+      data: {
+        name,
+        email,
+        timestamp: new Date().toISOString()
+      }
+    });
+    
+  } catch (error) {
+    console.error('❌ Error processing contact form:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error. Please try again later.'
+    });
+  }
+});
+
 // Test contact form endpoint (without validation for debugging)
 app.post('/api/contact/test', (req, res) => {
   console.log('Test contact form submission:', req.body);

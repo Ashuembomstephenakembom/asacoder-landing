@@ -118,7 +118,7 @@ ${message}
 Sent from ASACODER website contact form
     `)
     
-    const mailtoLink = `mailto:contact@asacoder.xyz?subject=${subject}&body=${body}`
+    const mailtoLink = `mailto:stephen@asaofficial.xyz?subject=${subject}&body=${body}`
     window.open(mailtoLink, '_blank')
   }
 
@@ -134,7 +134,7 @@ Sent from ASACODER website contact form
          {
        icon: <FaEnvelope />,
        title: 'Email',
-       value: 'contact@asacoder.xyz',
+       value: 'stephen@asaofficial.xyz',
                link: 'mailto:stephen@asaofficial.org',
        color: '#EA4335'
      },
