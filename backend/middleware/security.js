@@ -119,6 +119,7 @@ const corsOptions = {
   'https://www.asacoder.xyz',
   'https://api.asacoder.xyz',
   'https://*.vercel.app', // Allow Vercel preview URLs
+  'https://asacoder-landing.vercel.app', // Your specific Vercel domain
   'https://*.ngrok-free.app' // Keep for development
     ];
     

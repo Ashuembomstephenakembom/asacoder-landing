@@ -45,7 +45,8 @@ const Contact = () => {
     }
     
     // PRODUCTION: Fallback to your domain
-    return 'https://api.asacoder.xyz'
+    // Updated with actual Heroku app URL
+    return 'https://asacoderbackend.herokuapp.com'
   }
 
   // Handle form submission
