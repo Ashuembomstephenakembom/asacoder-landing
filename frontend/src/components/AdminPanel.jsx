@@ -36,7 +36,8 @@ const AdminPanel = () => {
         backendUrl = `${protocol}//${hostname}:5000`
       } else {
         // PRODUCTION: Fallback to your domain
-        backendUrl = 'https://asacoderbackend.herokuapp.com'
+        // TODO: Update with your new backend URL when ready
+        backendUrl = 'https://your-new-backend-url.com'
       }
     }
     

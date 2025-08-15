@@ -3,25 +3,25 @@
 ## 🔍 **Issues Identified:**
 
 1. ❌ **Missing Environment Variables** - Frontend can't connect to backend
-2. ❌ **Backend Not Accessible** - Heroku app not responding (404 errors)
+2. ❌ **Backend Not Accessible** - Backend hosting needs to be configured
 3. ❌ **CORS Configuration** - May be blocking requests
 4. ❌ **Database Connection** - MongoDB not configured
 
 ## 🛠️ **Step-by-Step Fix Instructions**
 
-### **Step 1: Get Your Heroku App URL**
+### **Step 1: Get Your Backend URL**
 
-First, you need to find your actual Heroku app URL:
+First, you need to get your new backend hosting URL:
 
 ```bash
-# In your backend directory
-cd backend
-heroku apps
-```
+# TODO: Update with your new backend hosting platform
+# Examples:
+# - Railway: Check your Railway dashboard
+# - Render: Check your Render dashboard  
+# - DigitalOcean: Check your App Platform dashboard
+# - Vercel: Check your Vercel dashboard
 
-Or check your Heroku dashboard at: https://dashboard.heroku.com/apps
-
-Your URL will be: `https://your-app-name.herokuapp.com`
+Your URL will be: `https://your-new-backend-url.com`
 
 ### **Step 2: Set Frontend Environment Variables (Vercel)**
 
@@ -35,41 +35,45 @@ Your URL will be: `https://your-app-name.herokuapp.com`
 5. Click **Save**
 6. Go to **Deployments** and redeploy your project
 
-### **Step 3: Configure Backend Environment Variables (Heroku)**
+### **Step 3: Configure Backend Environment Variables**
 
 ```bash
-# Navigate to backend directory
-cd backend
+# TODO: Update with your new backend hosting platform
+# Examples:
 
-# Set environment variables
-heroku config:set NODE_ENV=production
-heroku config:set CORS_ORIGIN=https://asacoder-landing.vercel.app
-heroku config:set ADMIN_PASSWORD=your-secure-password-here
+# Railway:
+# railway variables set NODE_ENV=production
+# railway variables set CORS_ORIGIN=https://asacoder-landing.vercel.app
+# railway variables set ADMIN_PASSWORD=your-secure-password-here
 
-# Optional: Set MongoDB URI if you have a database
-heroku config:set MONGODB_URI=your-mongodb-connection-string
+# Render:
+# render env set NODE_ENV=production
+# render env set CORS_ORIGIN=https://asacoder-landing.vercel.app
+# render env set ADMIN_PASSWORD=your-secure-password-here
 
-# Check current config
-heroku config
+# DigitalOcean:
+# doctl apps update --env NODE_ENV=production
+# doctl apps update --env CORS_ORIGIN=https://asacoder-landing.vercel.app
+# doctl apps update --env ADMIN_PASSWORD=your-secure-password-here
 ```
 
-### **Step 4: Deploy Backend to Heroku**
+### **Step 4: Deploy Backend**
 
 ```bash
-# Make sure you're in the backend directory
-cd backend
+# TODO: Update with your new backend hosting platform
+# Examples:
 
-# Add all changes
-git add .
+# Railway:
+# git push railway main
+# railway logs
 
-# Commit changes
-git commit -m "Update production configuration"
+# Render:
+# git push render main
+# render logs
 
-# Deploy to Heroku
-git push heroku main
-
-# Check logs for any errors
-heroku logs --tail
+# DigitalOcean:
+# git push digitalocean main
+# doctl apps logs your-app-id
 ```
 
 ### **Step 5: Test the Connection**

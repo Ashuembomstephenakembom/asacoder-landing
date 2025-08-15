@@ -16,7 +16,7 @@ console.log('================================\n');
 // Configuration
 const config = {
   frontendUrl: 'https://asacoder-landing.vercel.app',
-  backendUrl: 'https://asacoderbackend.herokuapp.com', // Updated with actual Heroku URL
+  backendUrl: 'https://your-new-backend-url.com', // TODO: Update when new backend is ready
   testEndpoints: [
     '/',
     '/api/contact/test',
