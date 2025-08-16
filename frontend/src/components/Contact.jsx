@@ -36,7 +36,7 @@ const Contact = () => {
       // DEVELOPMENT: Check if we're in development
       const hostname = window.location.hostname
       if (hostname === 'localhost' || hostname === '127.0.0.1') {
-        backendUrl = 'http://localhost:5000'
+        backendUrl = 'http://localhost:10000'
       } else {
         // PRODUCTION: Fallback to Render backend
         backendUrl = 'https://asacoder-backend.onrender.com'

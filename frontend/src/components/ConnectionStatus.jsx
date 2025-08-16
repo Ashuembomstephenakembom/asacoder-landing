@@ -14,7 +14,7 @@ const ConnectionStatus = () => {
       if (import.meta.env.VITE_API_URL) {
         backendUrl = import.meta.env.VITE_API_URL;
       } else if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        backendUrl = 'http://localhost:5000';
+        backendUrl = 'http://localhost:10000';
       } else {
         backendUrl = 'https://api.asacoder.xyz';
       }

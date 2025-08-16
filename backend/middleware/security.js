@@ -107,8 +107,11 @@ const createRateLimiters = () => {
 // CORS configuration with security
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or Postman)
-    if (!origin) return callback(null, true);
+    // Allow requests with no origin (like mobile apps, Postman, or some mobile browsers)
+    if (!origin) {
+      console.log('Allowing request with no origin (mobile/app)');
+      return callback(null, true);
+    }
     
     const allowedOrigins = [
   'http://localhost:3000',
@@ -137,6 +140,7 @@ const corsOptions = {
     const isLocalhost = origin.includes('localhost') || origin.includes('127.0.0.1');
     
     if (isAllowed || isLocalhost) {
+      console.log('CORS allowed origin:', origin);
       callback(null, true);
     } else {
       console.log('CORS blocked origin:', origin);

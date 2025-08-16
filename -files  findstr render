@@ -1,0 +1,5 @@
+[33md68bbd5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Fix backend port configuration for Render deployment - update to port 10000
+[33meb54e53[m Clean project for Render deployment - remove Railway and development code, add Render configuration
+[33m9119c32[m Remove Heroku Procfile - backend now optimized for Railway hosting
+[33m0d1a68a[m Prepare backend for Railway hosting: add railway.json, update server.js, create deployment guide and preparation script
+[33ma000254[m Remove Heroku references and prepare for new backend hosting
