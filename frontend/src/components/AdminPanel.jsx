@@ -126,6 +126,27 @@ const AdminPanel = () => {
     }
   }
 
+  // Test email configuration
+  const testEmailConfig = async () => {
+    try {
+      const backendUrl = getBackendUrl()
+      const response = await axios.get(`${backendUrl}/api/admin/test-email`, {
+        headers: {
+          'admin-password': 'asacoder2025'
+        }
+      })
+      
+      if (response.data.success) {
+        alert('✅ Email configuration is working!')
+      } else {
+        alert(`❌ Email configuration error: ${response.data.message}`)
+      }
+    } catch (error) {
+      console.error('Email test error:', error)
+      alert(`❌ Email test failed: ${error.response?.data?.message || error.message}`)
+    }
+  }
+
   // Send reply email
   const sendReply = async () => {
     if (!replyText.trim()) {
@@ -184,6 +205,7 @@ const AdminPanel = () => {
       }
     } catch (error) {
       console.error('Error sending reply:', error)
+      console.error('Error response data:', error.response?.data)
       
       // Show detailed error message including validation errors
       let errorMessage = 'Failed to send reply'
@@ -201,6 +223,7 @@ const AdminPanel = () => {
         errorMessage = error.message
       }
       
+      console.log('Final error message:', errorMessage)
       alert(`Error: ${errorMessage}`)
     } finally {
       setIsReplying(false)
@@ -332,14 +355,17 @@ const AdminPanel = () => {
             <span className="stat-label">Replied</span>
           </div>
         </div>
-        <div className="admin-actions">
-          <button onClick={fetchMessages} className="btn btn-secondary">
-            <FaSearch /> Refresh
-          </button>
-          <button onClick={handleLogout} className="btn btn-danger">
-            Logout
-          </button>
-        </div>
+                 <div className="admin-actions">
+           <button onClick={testEmailConfig} className="btn btn-info" style={{ marginRight: '10px' }}>
+             📧 Test Email
+           </button>
+           <button onClick={fetchMessages} className="btn btn-secondary">
+             <FaSearch /> Refresh
+           </button>
+           <button onClick={handleLogout} className="btn btn-danger">
+             Logout
+           </button>
+         </div>
       </div>
 
       {/* Filters and Search */}
