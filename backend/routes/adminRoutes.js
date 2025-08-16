@@ -10,9 +10,11 @@ const {
   sanitizeInputs 
 } = require('../middleware/validation');
 
-// Configure email transporter
+// Configure email transporter for Zoho
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.zoho.com',
+  port: 587,
+  secure: false, // true for 465, false for other ports
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
@@ -354,6 +356,49 @@ router.post('/reply-test', authenticateAdmin, async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Error in test reply'
+    });
+  }
+});
+
+// GET /api/admin/test-email - Test email configuration
+router.get('/test-email', authenticateAdmin, async (req, res) => {
+  try {
+    console.log('Testing email configuration...');
+    console.log('EMAIL_USER:', process.env.EMAIL_USER ? 'SET' : 'NOT SET');
+    console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? 'SET' : 'NOT SET');
+    
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      return res.status(500).json({
+        success: false,
+        message: 'Email credentials not configured',
+        emailUser: process.env.EMAIL_USER ? 'SET' : 'NOT SET',
+        emailPass: process.env.EMAIL_PASS ? 'SET' : 'NOT SET'
+      });
+    }
+    
+    // Test email transporter
+    try {
+      await transporter.verify();
+      res.json({
+        success: true,
+        message: 'Email configuration is working',
+        emailUser: process.env.EMAIL_USER
+      });
+    } catch (verifyError) {
+      console.error('Email verification failed:', verifyError);
+      res.status(500).json({
+        success: false,
+        message: `Email verification failed: ${verifyError.message}`,
+        error: verifyError.message
+      });
+    }
+    
+  } catch (error) {
+    console.error('Error testing email:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error testing email configuration',
+      error: error.message
     });
   }
 });
