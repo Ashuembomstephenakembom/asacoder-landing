@@ -162,16 +162,16 @@ const AdminPanel = () => {
       }
     } catch (error) {
       console.error('Error sending reply:', error)
-      // Simulate success for demo
-      setMessages(prev => prev.map(msg => 
-        msg._id === selectedMessage._id 
-          ? { ...msg, status: 'replied' }
-          : msg
-      ))
-      setReplyText('')
-      setShowReplyModal(false)
-      setSelectedMessage(null)
-      alert('Reply sent successfully! (Demo mode)')
+      
+      // Show actual error message instead of demo mode
+      let errorMessage = 'Failed to send reply'
+      if (error.response && error.response.data && error.response.data.message) {
+        errorMessage = error.response.data.message
+      } else if (error.message) {
+        errorMessage = error.message
+      }
+      
+      alert(`Error: ${errorMessage}`)
     } finally {
       setIsReplying(false)
     }

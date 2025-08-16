@@ -14,8 +14,8 @@ const {
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER || 'stephen@asaofficial.org',
-    pass: process.env.EMAIL_PASS || 'your-app-password'
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 });
 
@@ -229,6 +229,15 @@ router.post('/reply', authenticateAdmin, sanitizeInputs, validateAdminReply, asy
       return res.status(400).json({
         success: false,
         message: 'Missing required fields'
+      });
+    }
+    
+    // Check if email credentials are configured
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error('Email credentials not configured');
+      return res.status(500).json({
+        success: false,
+        message: 'Email service not configured. Please set EMAIL_USER and EMAIL_PASS environment variables.'
       });
     }
     
