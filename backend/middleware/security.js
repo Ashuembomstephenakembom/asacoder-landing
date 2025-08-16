@@ -120,24 +120,23 @@ const corsOptions = {
   'https://api.asacoder.xyz',
   'https://*.vercel.app', // Allow Vercel preview URLs
   'https://asacoder-landing.vercel.app', // Your specific Vercel domain
-  'https://*.ngrok-free.app' // Keep for development
+
     ];
     
-    // Check if origin is in allowed list or is a localhost/ngrok URL
+    // Check if origin is in allowed list or is a localhost URL
     const isAllowed = allowedOrigins.some(allowedOrigin => {
       if (allowedOrigin.includes('*')) {
-        // Handle wildcard patterns like *.ngrok-free.app
+        // Handle wildcard patterns
         const pattern = allowedOrigin.replace('*', '.*');
         return new RegExp(pattern).test(origin);
       }
       return allowedOrigin === origin;
     });
     
-    // Also allow any localhost or ngrok URLs for development
+    // Also allow any localhost URLs for development
     const isLocalhost = origin.includes('localhost') || origin.includes('127.0.0.1');
-    const isNgrok = origin.includes('ngrok-free.app');
     
-    if (isAllowed || isLocalhost || isNgrok) {
+    if (isAllowed || isLocalhost) {
       callback(null, true);
     } else {
       console.log('CORS blocked origin:', origin);

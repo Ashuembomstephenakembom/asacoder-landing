@@ -30,14 +30,9 @@ const AdminPanel = () => {
       const hostname = window.location.hostname
       if (hostname === 'localhost' || hostname === '127.0.0.1') {
         backendUrl = 'http://localhost:5000'
-      } else if (hostname.includes('ngrok-free.app')) {
-        // DEVELOPMENT: Check for ngrok tunnel
-        const protocol = window.location.protocol
-        backendUrl = `${protocol}//${hostname}:5000`
       } else {
-        // PRODUCTION: Fallback to your domain
-        // TODO: Update with your new backend URL when ready
-        backendUrl = 'https://your-new-backend-url.com'
+        // PRODUCTION: Fallback to Render backend
+        backendUrl = 'https://asacoder-backend.onrender.com'
       }
     }
     

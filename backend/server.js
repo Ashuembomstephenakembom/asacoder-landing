@@ -11,9 +11,8 @@ const { setupSecurity, validateInput, limitRequestSize } = require('./middleware
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-// PRODUCTION: Remove hardcoded ngrok URL
-// const NGROK_URL = 'https://476edd4dd8ed.ngrok-free.app';
+const PORT = process.env.PORT || 10000;
+// Production server configuration
 
 // Trust proxy for Heroku (fixes rate limiting issues)
 app.set('trust proxy', 1);
@@ -57,15 +56,7 @@ app.get('/', (req, res) => {
 
 
 
-// Test contact form endpoint (without validation for debugging)
-app.post('/api/contact/test', (req, res) => {
-  console.log('Test contact form submission:', req.body);
-  res.json({
-    success: true,
-    message: 'Test endpoint working',
-    received: req.body
-  });
-});
+
 
 // Admin dashboard route
 app.get('/admin', (req, res) => {

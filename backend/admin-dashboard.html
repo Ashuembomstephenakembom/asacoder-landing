@@ -284,9 +284,9 @@
     </div>
 
     <script>
-        const API_BASE = window.location.hostname === '1fd2e51e55f7.ngrok-free.app' 
-            ? 'https://1fd2e51e55f7.ngrok-free.app:5000/api/admin' 
-            : 'http://localhost:5000/api/admin';
+        const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:5000/api/admin' 
+            : '/api/admin';
 
         // Load messages on page load
         document.addEventListener('DOMContentLoaded', function() {

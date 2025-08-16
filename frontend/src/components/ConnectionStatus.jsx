@@ -15,8 +15,6 @@ const ConnectionStatus = () => {
         backendUrl = import.meta.env.VITE_API_URL;
       } else if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         backendUrl = 'http://localhost:5000';
-      } else if (window.location.hostname.includes('ngrok-free.app')) {
-        backendUrl = `https://${window.location.hostname}:5000`;
       } else {
         backendUrl = 'https://api.asacoder.xyz';
       }
