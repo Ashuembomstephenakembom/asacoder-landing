@@ -2,9 +2,9 @@
   "name": "asacoder-landing-backend",
   "version": "1.0.0",
   "description": "Backend API for ASACODER landing page contact form",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "dev": "nodemon server.js",
     "build": "echo 'No build step required'",
     "postinstall": "echo 'Post-install complete'",
