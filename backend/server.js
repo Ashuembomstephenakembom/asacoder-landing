@@ -53,11 +53,6 @@ app.get('/', (req, res) => {
     timestamp: new Date().toISOString()
   });
 });
-
-
-
-
-
 // Admin dashboard route
 app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, 'admin-dashboard.html'));
