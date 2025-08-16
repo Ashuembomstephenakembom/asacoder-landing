@@ -486,7 +486,16 @@ const AdminPanel = () => {
                   onChange={(e) => setReplyText(e.target.value)}
                   placeholder="Type your reply here..."
                   rows="6"
+                  maxLength="10000"
                 />
+                <div className="char-counter" style={{ 
+                  fontSize: '0.8rem', 
+                  color: replyText.length > 9000 ? '#e74c3c' : '#666',
+                  textAlign: 'right',
+                  marginTop: '5px'
+                }}>
+                  {replyText.length}/10,000 characters
+                </div>
               </div>
             </div>
             

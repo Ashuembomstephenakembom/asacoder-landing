@@ -235,7 +235,16 @@ Sent from ASACODER website contact form
                   required
                   rows="6"
                   placeholder="Tell me about your project..."
+                  maxLength="10000"
                 ></textarea>
+                <div className="char-counter" style={{ 
+                  fontSize: '0.8rem', 
+                  color: formData.message.length > 9000 ? '#e74c3c' : '#666',
+                  textAlign: 'right',
+                  marginTop: '5px'
+                }}>
+                  {formData.message.length}/10,000 characters
+                </div>
               </div>
 
               {/* Submit status messages */}

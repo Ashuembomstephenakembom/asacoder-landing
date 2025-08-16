@@ -40,8 +40,8 @@ const validateContactForm = [
   
   body('message')
     .trim()
-    .isLength({ min: 10, max: 1000 })
-    .withMessage('Message must be between 10 and 1000 characters')
+    .isLength({ min: 10, max: 10000 })
+    .withMessage('Message must be between 10 and 10,000 characters')
     .escape(),
   
   handleValidationErrors
@@ -68,8 +68,8 @@ const validateAdminReply = [
   
   body('replyText')
     .trim()
-    .isLength({ min: 5, max: 2000 })
-    .withMessage('Reply must be between 5 and 2000 characters')
+    .isLength({ min: 5, max: 10000 })
+    .withMessage('Reply must be between 5 and 10,000 characters')
     .escape(),
   
   body('originalEmail')
