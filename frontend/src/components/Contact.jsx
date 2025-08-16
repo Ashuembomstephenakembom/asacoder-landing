@@ -84,23 +84,48 @@ const Contact = () => {
     } catch (error) {
       console.error('Error submitting form:', error)
       
-      // More specific error handling
-      if (error.code === 'ECONNREFUSED') {
-        setSubmitStatus('error')
-        console.log('Backend server is not running. Please start the backend server.')
-      } else if (error.code === 'ERR_NETWORK') {
-        setSubmitStatus('error')
-        console.log('Network error - check your internet connection')
-      } else if (error.code === 'ECONNABORTED') {
-        setSubmitStatus('error')
-        console.log('Request timeout - server might be slow')
-      } else if (error.response) {
-        // Server responded with error status
-        setSubmitStatus('error')
-        console.log('Server error:', error.response.status, error.response.data)
+      // Check if we're in development mode
+      const isDevelopment = window.location.hostname === 'localhost' || 
+                           window.location.hostname === '127.0.0.1' || 
+                           window.location.port === '5173' || 
+                           window.location.port === '3000' ||
+                           window.location.hostname.startsWith('192.168.') ||
+                           window.location.hostname.startsWith('10.') ||
+                           window.location.hostname.startsWith('172.')
+      
+      // In production, only show error for actual server issues
+      if (isDevelopment) {
+        // In development, show detailed error handling
+        if (error.code === 'ECONNREFUSED') {
+          setSubmitStatus('error')
+          console.log('Backend server is not running. Please start the backend server.')
+        } else if (error.code === 'ERR_NETWORK') {
+          setSubmitStatus('error')
+          console.log('Network error - check your internet connection')
+        } else if (error.code === 'ECONNABORTED') {
+          setSubmitStatus('error')
+          console.log('Request timeout - server might be slow')
+        } else if (error.response) {
+          setSubmitStatus('error')
+          console.log('Server error:', error.response.status, error.response.data)
+        } else {
+          setSubmitStatus('error')
+          console.log('Unknown error occurred')
+        }
       } else {
-        setSubmitStatus('error')
-        console.log('Unknown error occurred')
+        // In production, only show error for server errors (5xx) or specific issues
+        if (error.response && error.response.status >= 500) {
+          setSubmitStatus('error')
+          console.log('Server error:', error.response.status, error.response.data)
+        } else if (error.code === 'ERR_NETWORK' || error.code === 'ECONNABORTED') {
+          // Don't show error for temporary network issues in production
+          console.log('Temporary network issue, not showing error to user')
+          setSubmitStatus(null)
+        } else {
+          // For other errors in production, show a simple error
+          setSubmitStatus('error')
+          console.log('Error occurred:', error.message)
+        }
       }
     } finally {
       setIsSubmitting(false)
@@ -220,19 +245,28 @@ Sent from ASACODER website contact form
                 </div>
               )}
 
-              {submitStatus === 'error' && (
-                <div className="form-message error">
-                  <p>Sorry, there was an error sending your message.</p>
-                  <p>Please try again or contact me directly through the links below.</p>
-                  <button 
-                    onClick={handleMobileFallback}
-                    className="btn btn-secondary fallback-btn"
-                    style={{ marginTop: '1rem', fontSize: '0.9rem' }}
-                  >
-                    📧 Send via Email Instead
-                  </button>
-                </div>
-              )}
+                             {submitStatus === 'error' && (
+                 <div className="form-message error">
+                   <p>Sorry, there was an error sending your message.</p>
+                   <p>Please try again or contact me directly through the links below.</p>
+                   {/* Only show fallback button in development */}
+                   {(window.location.hostname === 'localhost' || 
+                     window.location.hostname === '127.0.0.1' || 
+                     window.location.port === '5173' || 
+                     window.location.port === '3000' ||
+                     window.location.hostname.startsWith('192.168.') ||
+                     window.location.hostname.startsWith('10.') ||
+                     window.location.hostname.startsWith('172.')) && (
+                     <button 
+                       onClick={handleMobileFallback}
+                       className="btn btn-secondary fallback-btn"
+                       style={{ marginTop: '1rem', fontSize: '0.9rem' }}
+                     >
+                       📧 Send via Email Instead
+                     </button>
+                   )}
+                 </div>
+               )}
 
               <button 
                 type="submit" 
