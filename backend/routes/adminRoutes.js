@@ -236,9 +236,11 @@ router.post('/reply', authenticateAdmin, sanitizeInputs, validateAdminReply, asy
     // Check if email credentials are configured
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
       console.error('Email credentials not configured');
+      console.error('EMAIL_USER:', process.env.EMAIL_USER ? 'SET' : 'NOT SET');
+      console.error('EMAIL_PASS:', process.env.EMAIL_PASS ? 'SET' : 'NOT SET');
       return res.status(500).json({
         success: false,
-        message: 'Email service not configured. Please set EMAIL_USER and EMAIL_PASS environment variables.'
+        message: 'Email service not configured. Please set EMAIL_USER and EMAIL_PASS environment variables in Render dashboard.'
       });
     }
     
@@ -295,7 +297,17 @@ router.post('/reply', authenticateAdmin, sanitizeInputs, validateAdminReply, asy
     };
     
     // Send email
-    await transporter.sendMail(mailOptions);
+    try {
+      console.log('Attempting to send email...');
+      const result = await transporter.sendMail(mailOptions);
+      console.log('Email sent successfully:', result.messageId);
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError);
+      return res.status(500).json({
+        success: false,
+        message: `Email sending failed: ${emailError.message}`
+      });
+    }
     
     // Update message status to replied
     await Contact.findByIdAndUpdate(messageId, { 
