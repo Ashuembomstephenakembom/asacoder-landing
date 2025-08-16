@@ -34,7 +34,16 @@ const AdminPanel = () => {
     } else {
       // DEVELOPMENT: Check if we're in development
       const hostname = window.location.hostname
-      if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      const port = window.location.port
+      
+      // Check if we're on localhost or development ports
+      if (hostname === 'localhost' || 
+          hostname === '127.0.0.1' || 
+          port === '5173' || 
+          port === '3000' ||
+          hostname.startsWith('192.168.') ||  // Local network IP
+          hostname.startsWith('10.') ||       // Local network IP
+          hostname.startsWith('172.')) {      // Local network IP
         backendUrl = 'http://localhost:10000'
       } else {
         // PRODUCTION: Fallback to Render backend
