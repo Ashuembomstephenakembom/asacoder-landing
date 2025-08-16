@@ -223,6 +223,7 @@ router.delete('/contacts/:id', authenticateAdmin, async (req, res) => {
 // POST /api/admin/reply - Send reply email
 router.post('/reply', authenticateAdmin, sanitizeInputs, validateAdminReply, async (req, res) => {
   try {
+    console.log('Reply request body:', req.body);
     const { messageId, replyText, originalEmail, originalName } = req.body;
     
     if (!messageId || !replyText || !originalEmail) {
@@ -312,6 +313,35 @@ router.post('/reply', authenticateAdmin, sanitizeInputs, validateAdminReply, asy
     res.status(500).json({
       success: false,
       message: 'Error sending reply email'
+    });
+  }
+});
+
+// POST /api/admin/reply-test - Test reply without validation
+router.post('/reply-test', authenticateAdmin, async (req, res) => {
+  try {
+    console.log('Test reply request body:', req.body);
+    const { messageId, replyText, originalEmail, originalName } = req.body;
+    
+    if (!messageId || !replyText || !originalEmail) {
+      return res.status(400).json({
+        success: false,
+        message: 'Missing required fields',
+        received: { messageId, replyText, originalEmail, originalName }
+      });
+    }
+    
+    res.json({
+      success: true,
+      message: 'Test reply validation passed',
+      received: { messageId, replyText, originalEmail, originalName }
+    });
+    
+  } catch (error) {
+    console.error('Error in test reply:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error in test reply'
     });
   }
 });

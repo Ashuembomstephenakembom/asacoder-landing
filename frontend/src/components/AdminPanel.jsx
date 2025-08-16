@@ -136,6 +136,28 @@ const AdminPanel = () => {
     setIsReplying(true)
     try {
       const backendUrl = getBackendUrl()
+      console.log('Sending reply with data:', {
+        messageId: selectedMessage._id,
+        replyText: replyText,
+        originalEmail: selectedMessage.email,
+        originalName: selectedMessage.name
+      })
+      
+      // First try the test endpoint
+      const testResponse = await axios.post(`${backendUrl}/api/admin/reply-test`, {
+        messageId: selectedMessage._id,
+        replyText: replyText,
+        originalEmail: selectedMessage.email,
+        originalName: selectedMessage.name
+      }, {
+        headers: {
+          'admin-password': 'asacoder2025'
+        }
+      })
+      
+      console.log('Test response:', testResponse.data)
+      
+      // If test passes, try the real endpoint
       const response = await axios.post(`${backendUrl}/api/admin/reply`, {
         messageId: selectedMessage._id,
         replyText: replyText,
