@@ -17,6 +17,12 @@ const AdminPanel = () => {
   const [showReplyModal, setShowReplyModal] = useState(false)
   const [adminPassword, setAdminPassword] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [stats, setStats] = useState({
+    total: 0,
+    new: 0,
+    read: 0,
+    replied: 0
+  })
 
   // Get backend URL with production support
   const getBackendUrl = () => {
@@ -61,21 +67,25 @@ const AdminPanel = () => {
     }
   }, [])
 
-  // Fetch messages from backend
+  // Fetch messages and stats from backend
   const fetchMessages = async () => {
     try {
       const backendUrl = getBackendUrl()
-      const response = await axios.get(`${backendUrl}/api/admin/contacts`, {
-        headers: {
-          'admin-password': 'asacoder2025'
-        }
-      })
+      const headers = { 'admin-password': 'asacoder2025' }
       
-      if (response.data.success) {
-        setMessages(response.data.data)
+      // Fetch stats
+      const statsResponse = await axios.get(`${backendUrl}/api/admin/stats`, { headers })
+      if (statsResponse.data.success) {
+        setStats(statsResponse.data.data)
+      }
+      
+      // Fetch messages
+      const messagesResponse = await axios.get(`${backendUrl}/api/admin/contacts`, { headers })
+      if (messagesResponse.data.success) {
+        setMessages(messagesResponse.data.data)
       }
     } catch (error) {
-      console.error('Error fetching messages:', error)
+      console.error('Error fetching data:', error)
       // Show demo data if backend is not available
       setMessages([
         {
@@ -95,6 +105,13 @@ const AdminPanel = () => {
           createdAt: new Date(Date.now() - 86400000).toISOString()
         }
       ])
+      // Set demo stats
+      setStats({
+        total: 2,
+        new: 1,
+        read: 1,
+        replied: 0
+      })
     } finally {
       setIsLoading(false)
     }
@@ -260,21 +277,30 @@ const AdminPanel = () => {
         <h1>ASACODER Admin Panel</h1>
         <div className="admin-stats">
           <div className="stat">
-            <span className="stat-number">{messages.length}</span>
+            <span className="stat-number">{stats.total}</span>
             <span className="stat-label">Total Messages</span>
           </div>
           <div className="stat">
-            <span className="stat-number">{messages.filter(m => m.status === 'new').length}</span>
+            <span className="stat-number">{stats.new}</span>
             <span className="stat-label">New</span>
           </div>
           <div className="stat">
-            <span className="stat-number">{messages.filter(m => m.status === 'replied').length}</span>
+            <span className="stat-number">{stats.read}</span>
+            <span className="stat-label">Read</span>
+          </div>
+          <div className="stat">
+            <span className="stat-number">{stats.replied}</span>
             <span className="stat-label">Replied</span>
           </div>
         </div>
-        <button onClick={handleLogout} className="btn btn-secondary">
-          Logout
-        </button>
+        <div className="admin-actions">
+          <button onClick={fetchMessages} className="btn btn-secondary">
+            <FaSearch /> Refresh
+          </button>
+          <button onClick={handleLogout} className="btn btn-danger">
+            Logout
+          </button>
+        </div>
       </div>
 
       {/* Filters and Search */}
