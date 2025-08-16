@@ -163,10 +163,18 @@ const AdminPanel = () => {
     } catch (error) {
       console.error('Error sending reply:', error)
       
-      // Show actual error message instead of demo mode
+      // Show detailed error message including validation errors
       let errorMessage = 'Failed to send reply'
-      if (error.response && error.response.data && error.response.data.message) {
-        errorMessage = error.response.data.message
+      if (error.response && error.response.data) {
+        if (error.response.data.errors && Array.isArray(error.response.data.errors)) {
+          // Show validation errors
+          const validationErrors = error.response.data.errors
+            .map(err => `${err.field}: ${err.message}`)
+            .join('\n')
+          errorMessage = `Validation errors:\n${validationErrors}`
+        } else if (error.response.data.message) {
+          errorMessage = error.response.data.message
+        }
       } else if (error.message) {
         errorMessage = error.message
       }

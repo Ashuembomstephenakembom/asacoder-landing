@@ -68,8 +68,8 @@ const validateAdminReply = [
   
   body('replyText')
     .trim()
-    .isLength({ min: 10, max: 2000 })
-    .withMessage('Reply must be between 10 and 2000 characters')
+    .isLength({ min: 5, max: 2000 })
+    .withMessage('Reply must be between 5 and 2000 characters')
     .escape(),
   
   body('originalEmail')
@@ -81,8 +81,8 @@ const validateAdminReply = [
   body('originalName')
     .optional()
     .trim()
-    .isLength({ min: 2, max: 100 })
-    .withMessage('Original name must be between 2 and 100 characters')
+    .isLength({ min: 1, max: 100 })
+    .withMessage('Original name must be between 1 and 100 characters')
     .escape(),
   
   handleValidationErrors
