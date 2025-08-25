@@ -1,13 +1,10 @@
-import React from 'react';
 import { 
   FaWhatsapp, 
   FaTelegram, 
   FaLinkedin, 
   FaGithub, 
   FaEnvelope, 
-  FaPhone, 
-  FaMapMarkerAlt,
-  FaHeart
+  FaMapMarkerAlt
 } from 'react-icons/fa';
 import './Footer.css';
 

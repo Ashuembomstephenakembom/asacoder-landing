@@ -1,6 +1,5 @@
 // About component for ASACODER landing page
 // This section showcases personal background, experience, and skills
-import React from 'react'
 import { FaCode, FaChartLine, FaBullhorn, FaLaptop } from 'react-icons/fa'
 import './About.css'
 
@@ -18,7 +17,7 @@ const About = () => {
       <div className="section-container">
         {/* Section header */}
         <div className="section-header">
-          <h2 className="section-title">Meet Ashuembom Stephen Akembom  Professional Web Developer & Digital Expert</h2>
+          <h2 className="section-title">Meet Ashuembom Stephen Akembom - Professional Web Developer &amp; Digital Expert</h2>
           <p className="section-subtitle">
             Experienced full-stack developer and digital solutions specialist with expertise in React.js, Node.js, MongoDB, forex trading, and digital marketing
           </p>
@@ -29,19 +28,19 @@ const About = () => {
           <div className="about-text">
             <h3>Who I Am</h3>
             <p>
-              I'm a professional full-stack web developer and digital solutions expert with over 5 years of experience in creating modern web applications. 
+              I&apos;m a professional full-stack web developer and digital solutions expert with over 5 years of experience in creating modern web applications. 
               Specializing in React.js, Node.js, and MongoDB development, I build scalable, responsive websites that drive business growth and user engagement.
             </p>
             
             <p>
-              Beyond web development, I'm a certified forex trading mentor helping traders achieve consistent profits, 
+              Beyond web development, I&apos;m a certified forex trading mentor helping traders achieve consistent profits, 
               a digital marketing specialist creating impactful campaigns, and an ICT trainer empowering teams with essential computer skills.
             </p>
 
             <h3>My Approach</h3>
             <p>
               I approach every project with a focus on results, user experience, and long-term success. 
-              Whether it's developing a website, providing forex guidance, or teaching digital skills, 
+              Whether it&apos;s developing a website, providing forex guidance, or teaching digital skills, 
               I ensure that my clients and students achieve their goals and exceed their expectations.
             </p>
           </div>

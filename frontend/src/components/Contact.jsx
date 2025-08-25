@@ -1,7 +1,7 @@
 // Contact component for ASACODER landing page
 // This section includes a contact form and contact information
-import React, { useState } from 'react'
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaPaperPlane, FaWhatsapp, FaLinkedin, FaTelegram } from 'react-icons/fa'
+import { useState } from 'react'
+import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp, FaLinkedin, FaTelegram } from 'react-icons/fa'
 import axios from 'axios'
 import './Contact.css'
 
@@ -188,9 +188,9 @@ Sent from ASACODER website contact form
       <div className="section-container">
         {/* Section header */}
         <div className="section-header">
-          <h2 className="section-title">Let's Work Together</h2>
+          <h2 className="section-title">Let&apos;s Work Together</h2>
           <p className="section-subtitle">
-            Ready to bring your idea to life or improve your skills? Reach out and let's make it happen.
+            Ready to bring your idea to life or improve your skills? Reach out and let&apos;s make it happen.
           </p>
         </div>
 
@@ -250,7 +250,7 @@ Sent from ASACODER website contact form
               {/* Submit status messages */}
               {submitStatus === 'success' && (
                 <div className="form-message success">
-                  Thank you! Your message has been sent successfully. I'll get back to you soon.
+                  Thank you! Your message has been sent successfully. I&apos;ll get back to you soon.
                 </div>
               )}
 
@@ -301,7 +301,7 @@ Sent from ASACODER website contact form
           <div className="contact-info-section">
             <h3>Contact Information</h3>
             <p>
-              Feel free to reach out through any of these channels. I'm always excited to hear about 
+              Feel free to reach out through any of these channels. I&apos;m always excited to hear about 
               new projects and opportunities to collaborate.
             </p>
 

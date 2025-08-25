@@ -1,6 +1,6 @@
 // Navbar component for ASACODER landing page
 // This component provides navigation and is sticky at the top
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { FaBars, FaTimes, FaCode } from 'react-icons/fa'
 import './Navbar.css'
 

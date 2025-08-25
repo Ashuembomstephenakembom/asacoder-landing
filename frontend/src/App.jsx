@@ -1,6 +1,5 @@
 // Main App component for ASACODER landing page
 // This component will contain all the sections of the landing page
-import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import './components/MobileAnimations.css'

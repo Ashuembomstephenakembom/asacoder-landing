@@ -1,5 +1,5 @@
 // Connection Status component for debugging backend connection
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { FaCheckCircle, FaTimesCircle, FaSpinner } from 'react-icons/fa'
 import axios from 'axios'
 

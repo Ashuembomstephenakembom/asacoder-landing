@@ -1,6 +1,5 @@
 // Hero component for ASACODER landing page
 // This is the first section visitors see - the main headline and call-to-action
-import React from 'react'
 import { FaGithub, FaLinkedin, FaWhatsapp, FaTelegram } from 'react-icons/fa'
 import './Hero.css'
 
@@ -13,7 +12,7 @@ const Hero = () => {
         <div className="hero-content">
           {/* Greeting and name */}
           <div className="hero-greeting">
-            <span>Hello, I'm</span>
+            <span>Hello, I&apos;m</span>
           </div>
           
           {/* Main headline */}

@@ -1,7 +1,7 @@
 // Admin Panel component for ASACODER landing page
 // Allows viewing and replying to contact form messages
-import React, { useState, useEffect } from 'react'
-import { FaEnvelope, FaReply, FaCheck, FaTimes, FaEye, FaTrash, FaSearch, FaFilter, FaSort } from 'react-icons/fa'
+import { useState, useEffect, useCallback } from 'react'
+import { FaReply, FaTimes, FaEye, FaTrash, FaSearch } from 'react-icons/fa'
 import axios from 'axios'
 import './AdminPanel.css'
 
@@ -74,10 +74,10 @@ const AdminPanel = () => {
       setIsAuthenticated(true)
       fetchMessages()
     }
-  }, [])
+  }, [fetchMessages])
 
   // Fetch messages and stats from backend
-  const fetchMessages = async () => {
+  const fetchMessages = useCallback(async () => {
     try {
       const backendUrl = getBackendUrl()
       const headers = { 'admin-password': 'asacoder2025' }
@@ -124,7 +124,7 @@ const AdminPanel = () => {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [])
 
   // Test email configuration
   const testEmailConfig = async () => {

@@ -1,6 +1,6 @@
 // Services component for ASACODER landing page
 // This section showcases the services and solutions offered
-import React from 'react'
+
 import { FaGlobe, FaBullhorn, FaChartLine, FaLaptop } from 'react-icons/fa'
 import './Services.css'
 
@@ -71,7 +71,7 @@ const Services = () => {
         <div className="services-cta">
           <h3>Ready to Start Your Project?</h3>
           <p>
-            Let's discuss how I can help bring your ideas to life with custom digital solutions.
+            Let&apos;s discuss how I can help bring your ideas to life with custom digital solutions.
           </p>
           <button 
             className="btn btn-primary"

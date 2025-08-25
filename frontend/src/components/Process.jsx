@@ -1,6 +1,6 @@
 // Process component for ASACODER landing page
 // This section explains the workflow and methodology used for projects
-import React from 'react'
+
 import { FaComments, FaClipboardList, FaRocket, FaHeadset } from 'react-icons/fa'
 import './Process.css'
 
