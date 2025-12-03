@@ -1,11 +1,11 @@
 import { 
-  FaWhatsapp, 
-  FaTelegram, 
-  FaLinkedin, 
-  FaGithub, 
-  FaEnvelope, 
-  FaMapMarkerAlt
-} from 'react-icons/fa';
+  MessageCircle,
+  Send,
+  Linkedin,
+  Github,
+  Mail,
+  MapPin
+} from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -60,15 +60,15 @@ const Footer = () => {
               <h4 className="footer-title">Get In Touch</h4>
               <div className="footer-contact">
                 <a href="https://wa.me/237653180273" className="contact-item" target="_blank" rel="noopener noreferrer">
-                  <FaWhatsapp className="contact-icon whatsapp-icon" />
+                  <MessageCircle className="contact-icon whatsapp-icon" />
                   <span className="contact-text">+237 653 180 273</span>
                 </a>
                 <a href="mailto:contact@asacoder.xyz" className="contact-item">
-                  <FaEnvelope className="contact-icon email-icon" />
+                  <Mail className="contact-icon email-icon" />
                   <span className="contact-text">stephen@asaofficial.org</span>
                 </a>
                 <a href="https://maps.google.com/?q=Douala,Cameroon" className="contact-item" target="_blank" rel="noopener noreferrer">
-                  <FaMapMarkerAlt className="contact-icon location-icon" />
+                  <MapPin className="contact-icon location-icon" />
                   <span className="contact-text">Cameroon, Douala</span>
                 </a>
               </div>
@@ -80,16 +80,16 @@ const Footer = () => {
             <h4 className="social-title">Follow Me</h4>
             <div className="hero-social">
               <a href="https://wa.me/237653180273" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FaWhatsapp />
+                <MessageCircle />
               </a>
               <a href="https://t.me/ASACODER" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FaTelegram />
+                <Send />
               </a>
               <a href="https://www.linkedin.com/in/ashuembom-stephen-akembom-b84302260/" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FaLinkedin />
+                <Linkedin />
               </a>
               <a href="https://github.com/Ashuembomstephenakembom" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FaGithub />
+                <Github />
               </a>
             </div>
           </div>

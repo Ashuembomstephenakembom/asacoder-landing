@@ -208,15 +208,15 @@
 }
 
 .contact-icon {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f8f9fa;
+  background: transparent;
   border-radius: 12px;
-  font-size: 1.2rem;
-  color: white;
+  font-size: 1.6rem;
+  color: #111827;
   flex-shrink: 0;
 }
 

@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
+import Projects from './components/Projects'
 import Process from './components/Process'
 import Contact from './components/Contact'
 
@@ -33,6 +34,9 @@ const LandingPage = () => {
         
         {/* Services section - what you offer */}
         <Services />
+
+        {/* Projects section - recent work */}
+        <Projects />
         
         {/* Process section - how you work */}
         <Process />

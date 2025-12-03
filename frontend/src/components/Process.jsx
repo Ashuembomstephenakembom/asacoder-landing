@@ -1,14 +1,14 @@
 // Process component for ASACODER landing page
 // This section explains the workflow and methodology used for projects
 
-import { FaComments, FaClipboardList, FaRocket, FaHeadset } from 'react-icons/fa'
+import { MessagesSquare, ClipboardList, Rocket, Headphones } from 'lucide-react'
 import './Process.css'
 
 const Process = () => {
   // Process steps data - Updated to match ASACODER's specific process
   const processSteps = [
     {
-      icon: <FaComments />,
+      icon: <MessagesSquare />,
       title: 'Discuss Your Needs',
       description: 'We start by understanding your goals and challenges.',
       details: [
@@ -19,7 +19,7 @@ const Process = () => {
       ]
     },
     {
-      icon: <FaClipboardList />,
+      icon: <ClipboardList />,
       title: 'Plan the Solution',
       description: 'I design a tailored approach for your unique requirements.',
       details: [
@@ -30,7 +30,7 @@ const Process = () => {
       ]
     },
     {
-      icon: <FaRocket />,
+      icon: <Rocket />,
       title: 'Deliver With Quality',
       description: 'I execute with precision, ensuring the best outcome.',
       details: [
@@ -41,7 +41,7 @@ const Process = () => {
       ]
     },
     {
-      icon: <FaHeadset />,
+      icon: <Headphones />,
       title: 'Support & Growth',
       description: 'I provide ongoing guidance and updates to keep you moving forward.',
       details: [

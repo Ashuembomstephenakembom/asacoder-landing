@@ -1,27 +1,54 @@
 /* Hero component styles - Mobile-first design */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #ffffff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   padding: 1rem;
+  /* keep a small top offset but avoid pushing content downward on desktop */
+  padding-top: 1.5rem;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-  opacity: 0.3;
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 0 1rem;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  /* Keep buttons side-by-side on small screens */
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+    /* allow buttons to shrink and sit side-by-side */
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+
+  .hero-visual {
+    display: none;
+  }
 }
 
 .hero-container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
@@ -47,12 +74,12 @@
 
 /* Hero content */
 .hero-content {
-  color: white;
+  color: #1f1f2b;
 }
 
 .hero-greeting {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(31, 31, 43, 0.7);
   margin-bottom: 1rem;
   font-weight: 500;
 }
@@ -67,25 +94,21 @@
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #1d1d2f;
 }
 
 .hero-tagline {
   display: block;
   font-size: 1.5rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(31, 31, 43, 0.8);
   margin-bottom: 1rem;
 }
 
 .hero-description {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: #5a5a6b;
   margin-bottom: 2rem;
   max-width: 500px;
 }
@@ -114,29 +137,29 @@
 }
 
 .btn-primary {
-  background: white;
-  color: #667eea;
-  border-color: white;
+  background: #5c6ac4;
+  color: white;
+  border-color: #5c6ac4;
 }
 
 .btn-primary:hover {
-  background: transparent;
+  background: #4a57a4;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(92, 106, 196, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  color: white;
-  border-color: white;
+  color: #5c6ac4;
+  border-color: rgba(92, 106, 196, 0.4);
 }
 
 .btn-secondary:hover {
-  background: white;
-  color: #667eea;
+  background: #5c6ac4;
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(92, 106, 196, 0.2);
 }
 
 /* Social links */
@@ -146,91 +169,82 @@
 }
 
 .social-link {
-  width: 45px;
-  height: 45px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 52px;
+  height: 52px;
+  border: 2px solid !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 1.2rem;
+  color: white !important;
+  font-size: 1.4rem;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
-.social-link:hover {
-  border-color: white;
-  background: rgba(255, 255, 255, 0.1);
+.social-link:nth-child(1) {
+  background: #25D366 !important;
+  border-color: #25D366 !important;
+}
+
+.social-link:nth-child(1):hover {
+  background: #1fa857 !important;
+  border-color: #1fa857 !important;
   transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
 }
 
-/* ASACODER Logo */
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+.social-link:nth-child(2) {
+  background: #0088cc !important;
+  border-color: #0088cc !important;
 }
 
-.asacoder-logo {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 3rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 400px;
+.social-link:nth-child(2):hover {
+  background: #006699 !important;
+  border-color: #006699 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3) !important;
+}
+
+.social-link:nth-child(3) {
+  background: #0077B5 !important;
+  border-color: #0077B5 !important;
+}
+
+.social-link:nth-child(3):hover {
+  background: #005885 !important;
+  border-color: #005885 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3) !important;
+}
+
+.social-link:nth-child(4) {
+  background: #333333 !important;
+  border-color: #333333 !important;
+}
+
+.social-link:nth-child(4):hover {
+  background: #1a1a1a !important;
+  border-color: #1a1a1a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(51, 51, 51, 0.3) !important;
+}
+
+/* Hero visual */
+.hero-visual {
+  display: none;
+}
+
+.hero-photo {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: logoFloat 6s ease-in-out infinite;
-}
-
-@keyframes logoFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-.logo-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-  animation: logoPulse 3s ease-in-out infinite;
-}
-
-@keyframes logoPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-.logo-text {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.logo-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #333;
-  margin: 0 0 0.5rem 0;
-  letter-spacing: 2px;
-}
-
-.logo-subtitle {
-  font-size: 1rem;
-  color: #667eea;
-  font-weight: 500;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  max-width: 520px;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(15, 15, 26, 0.2);
+  object-fit: contain;
+  aspect-ratio: 3 / 4;
+  background: white;
+  padding: 1rem;
+  border: 2px solid rgba(15, 15, 26, 0.06);
 }
 
 /* Scroll indicator */
@@ -274,13 +288,19 @@
   }
 }
 
-/* Desktop design */
+@media (max-width: 768px) {
+  .hero-visual {
+    display: none;
+  }
+}
+
 @media (min-width: 769px) {
   .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     text-align: left;
+    align-items: center;
   }
 
   .hero-content {
@@ -293,6 +313,22 @@
 
   .hero-social {
     justify-content: flex-start;
+  }
+}
+
+/* Ensure mobile CTA buttons stay side-by-side (placed at end to take precedence) */
+@media (max-width: 768px) {
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: nowrap !important;
+    justify-content: center;
+  }
+
+  .btn {
+    min-width: 0 !important;
+    flex: 0 1 auto !important;
   }
 }
 
@@ -315,20 +351,8 @@
     min-width: 120px;
   }
 
-  .asacoder-logo {
-    padding: 1.5rem;
-  }
-
-  .logo-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .logo-text {
-    font-size: 1.5rem;
-  }
-
-  .logo-title {
-    font-size: 1.3rem;
+  .hero-photo {
+    max-width: 320px;
+    padding: 0.5rem;
   }
 }

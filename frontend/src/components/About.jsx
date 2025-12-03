@@ -1,15 +1,15 @@
 // About component for ASACODER landing page
 // This section showcases personal background, experience, and skills
-import { FaCode, FaChartLine, FaBullhorn, FaLaptop } from 'react-icons/fa'
+import { Code2, LineChart, Megaphone, Laptop } from 'lucide-react'
 import './About.css'
 
 const About = () => {
   // Skills data - Updated to match ASACODER's specific skills
   const skills = [
-    { name: 'Web Development', icon: <FaCode />, level: 95, description: 'Modern, responsive, optimized websites' },
-    { name: 'Forex Trading', icon: <FaChartLine />, level: 90, description: 'Mentorship & signals' },
-    { name: 'Digital Marketing', icon: <FaBullhorn />, level: 85, description: 'Social media growth & ad campaigns' },
-    { name: 'ICT/Microsoft Office Training', icon: <FaLaptop />, level: 90, description: 'Professional lessons' }
+    { name: 'Web Development', icon: <Code2 />, level: 95, description: 'Modern, responsive, optimized websites' },
+    { name: 'Forex Trading', icon: <LineChart />, level: 90, description: 'Mentorship & signals' },
+    { name: 'Digital Marketing', icon: <Megaphone />, level: 85, description: 'Social media growth & ad campaigns' },
+    { name: 'ICT/Microsoft Office Training', icon: <Laptop />, level: 90, description: 'Professional lessons' }
   ]
 
   return (
@@ -72,15 +72,15 @@ const About = () => {
         {/* Experience highlights */}
         <div className="about-highlights">
           <div className="highlight-item">
-            <div className="highlight-number">3+</div>
+            <div className="highlight-number">2+</div>
             <div className="highlight-label">Years Experience</div>
           </div>
           <div className="highlight-item">
-            <div className="highlight-number">50+</div>
+            <div className="highlight-number">5+</div>
             <div className="highlight-label">Projects Completed</div>
           </div>
           <div className="highlight-item">
-            <div className="highlight-number">100+</div>
+            <div className="highlight-number">10+</div>
             <div className="highlight-label">Students Trained</div>
           </div>
           <div className="highlight-item">

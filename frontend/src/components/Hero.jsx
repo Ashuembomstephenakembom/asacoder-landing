@@ -1,6 +1,7 @@
 // Hero component for ASACODER landing page
 // This is the first section visitors see - the main headline and call-to-action
-import { FaGithub, FaLinkedin, FaWhatsapp, FaTelegram } from 'react-icons/fa'
+import { Github, Linkedin, MessageCircle, Send } from 'lucide-react'
+import heroPhoto from '../assets/photo_5825550541030279359_y.jpg'
 import './Hero.css'
 
 const Hero = () => {
@@ -39,33 +40,27 @@ const Hero = () => {
           {/* Social links */}
           <div className="hero-social">
             <a href="https://wa.me/237653180273" target="_blank" rel="noopener noreferrer" className="social-link">
-              <FaWhatsapp />
+              <MessageCircle />
             </a>
             <a href="https://t.me/ASACODER" target="_blank" rel="noopener noreferrer" className="social-link">
-              <FaTelegram />
+              <Send />
             </a>
             <a href="https://www.linkedin.com/in/ashuembom-stephen-akembom-b84302260/" target="_blank" rel="noopener noreferrer" className="social-link">
-              <FaLinkedin />
+              <Linkedin />
             </a>
             <a href="https://github.com/Ashuembomstephenakembom" target="_blank" rel="noopener noreferrer" className="social-link">
-              <FaGithub />
+              <Github />
             </a>
           </div>
         </div>
         
-        {/* ASACODER Logo */}
         <div className="hero-visual">
-          <div className="logo-container">
-            <div className="asacoder-logo">
-              <div className="logo-icon">
-                <span className="logo-text">A</span>
-              </div>
-              <div className="logo-text-container">
-                <h2 className="logo-title">ASACODER</h2>
-                <p className="logo-subtitle">Digital Solutions</p>
-              </div>
-            </div>
-          </div>
+          <img 
+            src={heroPhoto} 
+            alt="ASACODER portrait" 
+            className="hero-photo"
+            loading="lazy"
+          />
         </div>
       </div>
       

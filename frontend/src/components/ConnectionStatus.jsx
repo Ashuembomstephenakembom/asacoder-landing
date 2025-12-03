@@ -1,6 +1,6 @@
 // Connection Status component for debugging backend connection
 import { useState, useEffect } from 'react'
-import { FaCheckCircle, FaTimesCircle, FaSpinner } from 'react-icons/fa'
+import { CheckCircle2, XCircle, Loader2 } from 'lucide-react'
 import axios from 'axios'
 
 const ConnectionStatus = () => {
@@ -72,11 +72,11 @@ const ConnectionStatus = () => {
   const getStatusIcon = () => {
     switch (status) {
       case 'checking':
-        return <FaSpinner className="animate-spin" />
+        return <Loader2 className="animate-spin" />
       case 'connected':
-        return <FaCheckCircle className="text-green-500" />
+        return <CheckCircle2 className="text-green-500" />
       case 'disconnected':
-        return <FaTimesCircle className="text-red-500" />
+        return <XCircle className="text-red-500" />
       default:
         return null
     }

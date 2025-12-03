@@ -1,7 +1,7 @@
 // Admin Panel component for ASACODER landing page
 // Allows viewing and replying to contact form messages
 import { useState, useEffect, useCallback } from 'react'
-import { FaReply, FaTimes, FaEye, FaTrash, FaSearch } from 'react-icons/fa'
+import { Reply, X, Eye, Trash2, Search } from 'lucide-react'
 import axios from 'axios'
 import './AdminPanel.css'
 
@@ -356,11 +356,11 @@ const AdminPanel = () => {
           </div>
         </div>
                  <div className="admin-actions">
-           <button onClick={testEmailConfig} className="btn btn-info" style={{ marginRight: '10px' }}>
+            <button onClick={testEmailConfig} className="btn btn-info" style={{ marginRight: '10px' }}>
              📧 Test Email
            </button>
            <button onClick={fetchMessages} className="btn btn-secondary">
-             <FaSearch /> Refresh
+             <Search /> Refresh
            </button>
            <button onClick={handleLogout} className="btn btn-danger">
              Logout
@@ -371,7 +371,7 @@ const AdminPanel = () => {
       {/* Filters and Search */}
       <div className="admin-controls">
         <div className="search-box">
-          <FaSearch />
+          <Search />
           <input
             type="text"
             placeholder="Search messages..."
@@ -435,7 +435,7 @@ const AdminPanel = () => {
                     className="btn btn-primary"
                     disabled={message.status === 'replied'}
                   >
-                    <FaReply /> Reply
+                    <Reply /> Reply
                   </button>
                   
                   <button
@@ -443,14 +443,14 @@ const AdminPanel = () => {
                     className="btn btn-secondary"
                     disabled={message.status === 'read' || message.status === 'replied'}
                   >
-                    <FaEye /> Mark Read
+                    <Eye /> Mark Read
                   </button>
                   
                   <button
                     onClick={() => deleteMessage(message._id)}
                     className="btn btn-danger"
                   >
-                    <FaTrash /> Delete
+                    <Trash2 /> Delete
                   </button>
                 </div>
               </div>
@@ -469,7 +469,7 @@ const AdminPanel = () => {
                 onClick={() => setShowReplyModal(false)}
                 className="close-btn"
               >
-                <FaTimes />
+                <X />
               </button>
             </div>
             

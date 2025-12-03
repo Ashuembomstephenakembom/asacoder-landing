@@ -1,32 +1,32 @@
 // Services component for ASACODER landing page
 // This section showcases the services and solutions offered
 
-import { FaGlobe, FaBullhorn, FaChartLine, FaLaptop } from 'react-icons/fa'
+import { Globe, Megaphone, LineChart, Laptop } from 'lucide-react'
 import './Services.css'
 
 const Services = () => {
   // Services data - Updated to match ASACODER's specific services
   const services = [
     {
-      icon: <FaGlobe />,
+      icon: <Globe />,
       title: 'Website Development',
       description: 'Modern, responsive, and fast-loading websites built with React, Node.js, and MongoDB. From personal portfolios to business landing pages, I create digital platforms that stand out.',
       features: ['Custom React/Node.js Sites', 'Landing Pages', 'E-commerce Platforms', 'Responsive Design']
     },
     {
-      icon: <FaBullhorn />,
+      icon: <Megaphone />,
       title: 'Digital Marketing',
       description: 'Social media management, content creation, and targeted ad campaigns that drive real engagement and increase sales.',
       features: ['Facebook/Instagram Ads', 'Account Growth', 'Social Media Management', 'Campaign Analytics']
     },
     {
-      icon: <FaChartLine />,
+      icon: <LineChart />,
       title: 'Forex Training & Signals',
       description: 'Personalized forex trading lessons, market insights, and trading signals to help you trade with confidence.',
       features: ['Trading Education', 'Professional Signals', 'Risk Management', 'Market Analysis']
     },
     {
-      icon: <FaLaptop />,
+      icon: <Laptop />,
       title: 'Microsoft Office & ICT Training',
       description: 'Step-by-step training in Word, Excel, PowerPoint, and core computer skills to boost your productivity and career.',
       features: ['Word, Excel, PowerPoint', 'Professional Lessons', 'Practical Exercises', 'Certification Prep']

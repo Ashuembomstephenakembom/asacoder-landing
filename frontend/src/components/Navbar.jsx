@@ -1,7 +1,8 @@
 // Navbar component for ASACODER landing page
 // This component provides navigation and is sticky at the top
 import { useState, useEffect } from 'react'
-import { FaBars, FaTimes, FaCode } from 'react-icons/fa'
+import { Menu, X } from 'lucide-react'
+import logo from '../assets/logo.png'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -23,13 +24,19 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  // Smooth scroll to section
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId)
+  // Handle navigation click (scroll or external link)
+  const handleNavClick = (id) => {
+    if (id === 'store') {
+      window.open('https://selar.com/m/traderlibrary', '_blank')
+      setIsMenuOpen(false)
+      return
+    }
+
+    const section = document.getElementById(id)
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' })
     }
-    setIsMenuOpen(false) // Close mobile menu after clicking
+    setIsMenuOpen(false)
   }
 
   // Navigation links
@@ -37,6 +44,8 @@ const Navbar = () => {
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'services', label: 'Services' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'store', label: 'Store / eBooks' },
     { id: 'process', label: 'Process' },
     { id: 'contact', label: 'Contact' }
   ]
@@ -47,10 +56,8 @@ const Navbar = () => {
         {/* Logo/Brand */}
         <div className="navbar-brand">
           <div className="brand-logo">
-            <FaCode className="brand-icon" />
-            <span className="brand-text">ASACODER</span>
+            <img src={logo} alt="ASACODER Logo" className="brand-icon" />
           </div>
-          <span className="brand-tagline">Digital Solutions</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -59,7 +66,7 @@ const Navbar = () => {
             <li key={link.id} className="nav-item">
               <button
                 className="nav-link"
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => handleNavClick(link.id)}
               >
                 {link.label}
               </button>
@@ -69,7 +76,7 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <button className="mobile-menu-btn" onClick={toggleMenu}>
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
+          {isMenuOpen ? <X /> : <Menu />}
         </button>
 
         {/* Mobile Navigation */}
@@ -79,7 +86,7 @@ const Navbar = () => {
               <li key={link.id} className="mobile-nav-item">
                 <button
                   className="mobile-nav-link"
-                  onClick={() => scrollToSection(link.id)}
+                  onClick={() => handleNavClick(link.id)}
                 >
                   {link.label}
                 </button>

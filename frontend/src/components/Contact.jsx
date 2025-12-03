@@ -1,7 +1,7 @@
 // Contact component for ASACODER landing page
 // This section includes a contact form and contact information
 import { useState } from 'react'
-import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp, FaLinkedin, FaTelegram } from 'react-icons/fa'
+import { Mail, MapPin, Send, MessageCircle, Linkedin, SendHorizontal } from 'lucide-react'
 import axios from 'axios'
 import './Contact.css'
 
@@ -154,32 +154,28 @@ Sent from ASACODER website contact form
   // Contact information - Updated to match ASACODER's contact methods
   const contactInfo = [
     {
-      icon: <FaWhatsapp />,
+      icon: <MessageCircle />,
       title: 'WhatsApp',
       value: '+237 653 180 273',
-      link: 'https://wa.me/237653180273',
-      color: '#25D366'
+      link: 'https://wa.me/237653180273'
     },
          {
-       icon: <FaEnvelope />,
+      icon: <Mail />,
        title: 'Email',
        value: 'stephen@asaofficial.org',
-               link: 'mailto:stephen@asaofficial.org',
-       color: '#EA4335'
+               link: 'mailto:stephen@asaofficial.org'
      },
     {
-      icon: <FaLinkedin />,
+      icon: <Linkedin />,
       title: 'LinkedIn',
       value: 'ashuembom-stephen-akembom',
-      link: 'https://www.linkedin.com/in/ashuembom-stephen-akembom-b84302260/',
-      color: '#0077B5'
+      link: 'https://www.linkedin.com/in/ashuembom-stephen-akembom-b84302260/'
     },
     {
-      icon: <FaTelegram />,
+      icon: <SendHorizontal />,
       title: 'Telegram',
       value: '@ASACODER',
-      link: 'https://t.me/ASACODER',
-      color: '#0088CC'
+      link: 'https://t.me/ASACODER'
     }
   ]
 
@@ -289,7 +285,7 @@ Sent from ASACODER website contact form
                   </>
                 ) : (
                   <>
-                    <FaPaperPlane />
+                    <Send />
                     Send Message
                   </>
                 )}
@@ -308,7 +304,7 @@ Sent from ASACODER website contact form
             <div className="contact-info-list">
               {contactInfo.map((info, index) => (
                 <div key={index} className="contact-info-item">
-                  <div className="contact-icon" style={{ color: info.color }}>
+                  <div className="contact-icon">
                     {info.icon}
                   </div>
                   <div className="contact-details">
@@ -330,7 +326,7 @@ Sent from ASACODER website contact form
               <h4>Service Region</h4>
               <div className="map-container">
                 <div className="map-placeholder">
-                  <FaMapMarkerAlt className="map-icon" />
+                  <MapPin className="map-icon" />
                   <p>Remote Services Available Worldwide</p>
                   <div className="service-regions">
                     <span 
