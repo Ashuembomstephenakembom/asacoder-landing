@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://asacoder.xyz/</loc>
+    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- About Section -->
+  <url>
+    <loc>https://asacoder.xyz/#about</loc>
+    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Services Section -->
+  <url>
+    <loc>https://asacoder.xyz/#services</loc>
+    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Process Section -->
+  <url>
+    <loc>https://asacoder.xyz/#process</loc>
+    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Contact Section -->
+  <url>
+    <loc>https://asacoder.xyz/#contact</loc>
+    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://asacoder.xyz/privacy-policy</loc>
+    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://asacoder.xyz/terms-of-service</loc>
+    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Admin Panel -->
+  <url>
+    <loc>https://asacoder.xyz/admin</loc>
+    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.1</priority>
+  </url>
+</urlset>
