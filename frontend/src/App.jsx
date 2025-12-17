@@ -66,9 +66,24 @@ const ScrollToTop = () => {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    // Don't scroll for static files (they're handled by the server)
+    const staticFileExtensions = ['.xml', '.txt', '.jpg', '.jpeg', '.png', '.gif', '.svg', '.ico', '.css', '.js', '.json', '.woff', '.woff2', '.ttf', '.eot', '.html']
+    const isStaticFile = staticFileExtensions.some(ext => pathname.endsWith(ext))
+    
+    if (!isStaticFile) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }, [pathname])
 
+  return null
+}
+
+// Component to handle static files (suppresses React Router warnings)
+const StaticFileHandler = () => {
+  useEffect(() => {
+    // Static files are served by the server, not React Router
+    // This component just suppresses the "No routes matched" warning
+  }, [])
   return null
 }
 
@@ -98,6 +113,8 @@ function App() {
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          {/* Catch-all route for static files - these are handled by the server */}
+          <Route path="*" element={<StaticFileHandler />} />
         </Routes>
       </Suspense>
     </Router>
