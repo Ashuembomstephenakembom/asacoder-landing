@@ -304,7 +304,7 @@ Sent from ASACODER website contact form
             <div className="contact-info-list">
               {contactInfo.map((info, index) => (
                 <div key={index} className="contact-info-item">
-                  <div className="contact-icon">
+                  <div className={`contact-icon contact-icon-${info.title.toLowerCase()}`}>
                     {info.icon}
                   </div>
                   <div className="contact-details">

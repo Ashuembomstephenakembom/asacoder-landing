@@ -137,29 +137,29 @@
 }
 
 .btn-primary {
-  background: #5c6ac4;
-  color: white;
-  border-color: #5c6ac4;
+  background: var(--gradient-primary);
+  color: var(--color-text-white);
+  border-color: var(--color-primary);
 }
 
 .btn-primary:hover {
-  background: #4a57a4;
-  color: white;
+  background: var(--gradient-primary-hover);
+  color: var(--color-text-white);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(92, 106, 196, 0.3);
+  box-shadow: var(--shadow-primary);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #5c6ac4;
-  border-color: rgba(92, 106, 196, 0.4);
+  color: var(--color-primary);
+  border-color: var(--color-border-primary);
 }
 
 .btn-secondary:hover {
-  background: #5c6ac4;
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--color-text-white);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(92, 106, 196, 0.2);
+  box-shadow: var(--shadow-primary);
 }
 
 /* Social links */
@@ -183,20 +183,20 @@
 }
 
 .social-link:nth-child(1) {
-  background: #25D366 !important;
-  border-color: #25D366 !important;
+  background: var(--color-whatsapp) !important;
+  border-color: var(--color-whatsapp) !important;
 }
 
 .social-link:nth-child(1):hover {
   background: #1fa857 !important;
   border-color: #1fa857 !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
+  box-shadow: var(--shadow-primary) !important;
 }
 
 .social-link:nth-child(2) {
-  background: #0088cc !important;
-  border-color: #0088cc !important;
+  background: var(--color-telegram) !important;
+  border-color: var(--color-telegram) !important;
 }
 
 .social-link:nth-child(2):hover {

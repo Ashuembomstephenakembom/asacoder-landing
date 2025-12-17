@@ -13,18 +13,18 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--color-bg-tertiary);
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   border-radius: 8px;
-  border: 2px solid #f1f1f1;
+  border: 2px solid var(--color-bg-tertiary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: var(--gradient-primary-hover);
 }
 
 /* Scrollbar Arrow Buttons */
@@ -73,7 +73,7 @@
 /* Firefox Scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #667eea #f1f1f1;
+  scrollbar-color: var(--color-primary) var(--color-bg-tertiary);
 }
 
 /* Main content area */
@@ -82,6 +82,9 @@ main {
   display: flex;
   flex-direction: column;
   padding-top: 70px; /* Account for fixed navbar height */
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Section spacing */
@@ -91,18 +94,18 @@ section {
 
 /* Section with background color */
 section.bg-light {
-  background-color: #f8f9fa;
+  background-color: var(--color-bg-light);
 }
 
 section.bg-dark {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-white);
 }
 
 /* Section with gradient background */
 section.bg-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #ffffff;
+  background: var(--gradient-primary);
+  color: var(--color-text-white);
 }
 
 /* Responsive section padding */
@@ -117,11 +120,15 @@ section.bg-gradient {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
   .section-container {
     padding: 0 1rem;
+    max-width: 100%;
   }
 }
 
@@ -135,12 +142,12 @@ section.bg-gradient {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--color-text-primary);
 }
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--color-text-secondary);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -148,12 +155,12 @@ section.bg-gradient {
 /* Dark theme adjustments */
 section.bg-dark .section-title,
 section.bg-gradient .section-title {
-  color: #ffffff;
+  color: var(--color-text-white);
 }
 
 section.bg-dark .section-subtitle,
 section.bg-gradient .section-subtitle {
-  color: #cccccc;
+  color: var(--color-text-light);
 }
 
 /* Responsive typography */

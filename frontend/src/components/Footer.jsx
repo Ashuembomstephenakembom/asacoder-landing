@@ -63,7 +63,7 @@ const Footer = () => {
                   <MessageCircle className="contact-icon whatsapp-icon" />
                   <span className="contact-text">+237 653 180 273</span>
                 </a>
-                <a href="mailto:contact@asacoder.xyz" className="contact-item">
+                <a href="mailto:stephen@asaofficial.org" className="contact-item">
                   <Mail className="contact-icon email-icon" />
                   <span className="contact-text">stephen@asaofficial.org</span>
                 </a>

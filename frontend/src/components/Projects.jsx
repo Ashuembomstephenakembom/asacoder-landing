@@ -1,7 +1,6 @@
 // Projects component for ASACODER landing page
-// Displays active projects with a horizontal slider
-import { useRef } from 'react'
-import { Globe2, LayoutPanelLeft, LineChart, Rocket, Users, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-react'
+// Displays active projects in a clean list layout
+import { Globe2, LayoutPanelLeft, LineChart, Rocket, Users, ShieldCheck, ExternalLink } from 'lucide-react'
 import './Projects.css'
 
 const projects = [
@@ -17,7 +16,7 @@ const projects = [
   },
   {
     title: 'WorldLinkerglobal.com',
-    role: 'founder & Lead Developer',
+    role: 'Founder & Lead Developer',
     description:
       'A global contact connection platform powered by WhatsApp that connects buyers and sellers by location and business niche. Users must register and subscribe to access contacts.',
     tech: ['WhatsApp Automation', 'Subscriptions', 'Multi-region'],
@@ -37,7 +36,7 @@ const projects = [
   },
   {
     title: 'SecretConnect.cm',
-    role: 'founder & lead Developer',
+    role: 'Founder & Lead Developer',
     description:
       'An anonymous social and confession platform for Cameroonians to share thoughts, secrets, or meet people while keeping privacy protected.',
     tech: ['Anonymity', 'Moderation', 'Messaging'],
@@ -47,7 +46,7 @@ const projects = [
   },
   {
     title: 'Cameroon Youth Skills & Opportunity Platform',
-    role: 'founder & lead Developer',
+    role: 'Founder & Lead Developer',
     description:
       'A platform aimed at empowering youth in Cameroon by providing access to skills, job opportunities, and funding resources to grow their careers or businesses.',
     tech: ['Jobs', 'Funding', 'Training'],
@@ -57,7 +56,7 @@ const projects = [
   },
   {
     title: 'TrustForexBrokers',
-    role: 'founder & Lead Developer',
+    role: 'Founder & Lead Developer',
     description:
       'A website helping Forex traders find reliable brokers and learn about trading strategies, reviews, and educational content, including referral links for account openings.',
     tech: ['Broker Reviews', 'Affiliates', 'Education'],
@@ -68,19 +67,6 @@ const projects = [
 ]
 
 const Projects = () => {
-  const trackRef = useRef(null)
-
-  const scrollByCards = (direction) => {
-    const track = trackRef.current
-    if (!track) return
-
-    const card = track.querySelector('.project-card')
-    if (!card) return
-
-    const cardWidth = card.offsetWidth + 24 // width + gap
-    track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' })
-  }
-
   return (
     <section id="projects" className="projects">
       <div className="section-container">
@@ -92,66 +78,46 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="projects-slider">
-          <button
-            type="button"
-            className="projects-nav-btn left"
-            onClick={() => scrollByCards(-1)}
-            aria-label="Previous projects"
-          >
-            <ChevronLeft />
-          </button>
-
-          <div className="projects-track" ref={trackRef}>
-            {projects.map((project, index) => (
-              <article key={project.title + index} className="project-card">
-                <div className="project-header">
-                  <div className="project-icon-wrapper">{project.icon}</div>
-                  <div>
-                    <h3 className="project-title">{project.title}</h3>
+        <div className="projects-list">
+          {projects.map((project, index) => (
+            <article key={project.title + index} className="project-item">
+              <div className="project-content">
+                <div className="project-main">
+                  <div className="project-icon">{project.icon}</div>
+                  <div className="project-info">
+                    <div className="project-title-row">
+                      <h3 className="project-title">{project.title}</h3>
+                      <span className={`project-status ${project.status.toLowerCase().replace(' ', '-')}`}>
+                        {project.status}
+                      </span>
+                    </div>
                     <p className="project-role">{project.role}</p>
+                    <p className="project-description">{project.description}</p>
+                    <div className="project-footer">
+                      <ul className="project-tech-list">
+                        {project.tech.map((item) => (
+                          <li key={item} className="project-tech-tag">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      {project.link !== '#' && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          <span>Visit</span>
+                          <ExternalLink size={14} />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                  <span
-                    className={`project-status ${
-                      project.status.toLowerCase() === 'live' ? 'live' : 'active'
-                    }`}
-                  >
-                    {project.status}
-                  </span>
                 </div>
-
-                <p className="project-description">{project.description}</p>
-
-                <div className="project-meta">
-                  <ul className="project-tech-list">
-                    {project.tech.map((item) => (
-                      <li key={item} className="project-tech-pill">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    View project
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <button
-            type="button"
-            className="projects-nav-btn right"
-            onClick={() => scrollByCards(1)}
-            aria-label="Next projects"
-          >
-            <ChevronRight />
-          </button>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

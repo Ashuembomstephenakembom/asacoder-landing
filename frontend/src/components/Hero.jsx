@@ -1,7 +1,7 @@
 // Hero component for ASACODER landing page
 // This is the first section visitors see - the main headline and call-to-action
 import { Github, Linkedin, MessageCircle, Send } from 'lucide-react'
-import heroPhoto from '../assets/photo_5825550541030279359_y.jpg'
+import heroPhoto from '../assets/Ashuembom stephen akembom .jpg'
 import './Hero.css'
 
 const Hero = () => {

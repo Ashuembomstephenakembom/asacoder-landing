@@ -1,8 +1,8 @@
 /* Footer component styles - Professional and responsive design */
 
 .footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #ffffff;
+  background: var(--gradient-primary);
+  color: var(--color-text-white);
   padding: 3rem 0 0 0;
   margin-top: auto;
   position: relative;
@@ -140,21 +140,21 @@
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  padding: 0.5rem 0.75rem;
+  gap: 1rem;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .contact-item:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
   color: #ffffff;
@@ -162,13 +162,46 @@
 }
 
 .contact-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   font-size: 1.3rem;
-  min-width: 20px;
-  transition: transform 0.3s ease;
-  color: #e5e7eb;
+  color: var(--color-text-white);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.contact-item:hover .contact-icon {
+/* WhatsApp - Green */
+.contact-icon.whatsapp-icon {
+  background: #25D366;
+}
+
+.contact-item:hover .whatsapp-icon {
+  background: #1fa857;
+  transform: scale(1.1);
+}
+
+/* Email - Red */
+.contact-icon.email-icon {
+  background: #EA4335;
+}
+
+.contact-item:hover .email-icon {
+  background: #d33b2c;
+  transform: scale(1.1);
+}
+
+/* Location - Orange/Amber */
+.contact-icon.location-icon {
+  background: #F59E0B;
+}
+
+.contact-item:hover .location-icon {
+  background: #d97706;
   transform: scale(1.1);
 }
 
@@ -628,7 +661,15 @@
   }
   
   .contact-icon {
-    font-size: 0.9rem;
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    font-size: 1.1rem;
+  }
+  
+  .contact-item {
+    gap: 0.75rem;
+    padding: 0.6rem 0.8rem;
   }
 }
 

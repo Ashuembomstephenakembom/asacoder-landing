@@ -63,7 +63,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: var(--gradient-primary);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -126,7 +126,7 @@
 }
 
 .feature-check {
-  color: #667eea;
+  color: var(--color-primary);
   font-weight: bold;
   font-size: 1.1rem;
 }
@@ -159,8 +159,8 @@
 .services-cta .btn {
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--color-text-white);
   border: none;
   border-radius: 50px;
   font-weight: 600;
@@ -170,7 +170,7 @@
 
 .services-cta .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: var(--shadow-primary);
 }
 
 /* Responsive design */
