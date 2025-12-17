@@ -8,7 +8,9 @@
 - **Local Development**: `http://localhost:5173/admin` (or `http://localhost:3000/admin` if using port 3000)
 
 ### **Admin Password:**
-- Password: `asacoder2025`
+- Password: Set in your environment variables (check your backend configuration)
+- Default location: Backend environment variable `ADMIN_PASSWORD`
+- **Note**: For security, the password is not stored in this repository
 
 ---
 
@@ -52,7 +54,7 @@ The backend will start on `http://localhost:10000` (as configured in your code).
 
 1. Make sure both frontend and backend servers are running
 2. Open your browser and go to: `http://localhost:5173/admin`
-3. Enter the password: `asacoder2025`
+3. Enter your admin password (set in backend environment variables)
 4. You should now see the admin panel!
 
 ### **Development URLs:**
@@ -117,7 +119,7 @@ If you can't see messages in the admin panel, it's likely because:
 1. Go to your production website: `https://asacoder.xyz`
 2. Add `/admin` to the URL: `https://asacoder.xyz/admin`
 
-3. Enter password: `asacoder2025`
+3. Enter your admin password (configured in backend environment variables)
 
 ### **Step 2: Check if MongoDB is Connected**
 
@@ -191,14 +193,14 @@ Make sure this is set:
 1. **Check your production URL** - What domain is your site deployed on?
 2. **Check backend logs** - Is the backend running?
 3. **Check MongoDB** - Is it connected?
-4. **Try the password** - Make sure you're using: `asacoder2025`
+4. **Verify the password** - Check your backend environment variables for `ADMIN_PASSWORD`
 
 ---
 
 ## 📝 Summary
 
 - ✅ **Admin Panel Route**: `/admin`
-- ✅ **Password**: `asacoder2025`
+- ✅ **Password**: Set in backend environment variables (`ADMIN_PASSWORD`)
 - ✅ **Backend URL**: `https://asacoder-backend.onrender.com`
 - ⚠️ **Contact form messages** go to MongoDB (admin panel)
 - ⚠️ **Direct emails** go to your Zoho account (phone)
