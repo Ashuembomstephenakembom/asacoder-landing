@@ -5,9 +5,20 @@ import heroPhoto from '../assets/Ashuembom stephen akembom .jpg'
 import './Hero.css'
 
 const Hero = () => {
+  // Debug: Log the image path
+  console.log('Hero photo path:', heroPhoto)
+  
+  const backgroundStyle = {
+    backgroundImage: `url("${heroPhoto}")`,
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'scroll'
+  }
 
   return (
-    <section id="hero" className="hero">
+    <section id="hero" className="hero" style={backgroundStyle}>
+      {/* Temporarily comment overlay to verify image */}
+      <div className="hero-overlay" style={{ opacity: 0.2 }}></div>
       <div className="hero-container">
         {/* Main content */}
         <div className="hero-content">
@@ -53,18 +64,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        
-        <div className="hero-visual">
-          <img 
-            src={heroPhoto} 
-            alt="ASACODER portrait" 
-            className="hero-photo"
-            loading="lazy"
-          />
-        </div>
       </div>
-      
-
     </section>
   )
 }
