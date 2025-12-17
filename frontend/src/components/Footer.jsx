@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { 
   MessageCircle,
   Send,
@@ -51,7 +52,7 @@ const Footer = () => {
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://asacoder.xyz/privacy-policy">Privacy Policy</a></li>
+                <li><Link to="/privacy-policy" className="footer-link">Privacy Policy</Link></li>
               </ul>
             </div>
 
@@ -104,9 +105,9 @@ const Footer = () => {
               © {currentYear} <strong>ASACODER</strong> All rights reserved.
             </span>
             <span className="separator">|</span>
-            <a href="https://asacoder.xyz/terms-of-service" className="bottom-link">Terms of Service</a>
+            <Link to="/terms-of-service" className="bottom-link" style={{ cursor: 'pointer', zIndex: 10 }}>Terms of Service</Link>
             <span className="separator">|</span>
-            <a href="https://asacoder.xyz/privacy-policy" className="bottom-link">Privacy Policy</a>
+            <Link to="/privacy-policy" className="bottom-link" style={{ cursor: 'pointer', zIndex: 10 }}>Privacy Policy</Link>
           </div>
         </div>
       </div>

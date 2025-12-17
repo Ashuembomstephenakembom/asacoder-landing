@@ -114,7 +114,9 @@
   margin-bottom: 0.8rem;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links a:visited,
+.footer-links a:link {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-size: 0.9rem;
@@ -122,10 +124,28 @@
   display: inline-block;
   position: relative;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .footer-links a:hover {
   color: #ffffff;
+  transform: translateX(5px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure React Router Link components are styled and clickable */
+.footer-links a,
+.footer-links .footer-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  display: inline-block;
+  position: relative;
+}
+
+.footer-links .footer-link:hover {
+  color: #ffffff !important;
   transform: translateX(5px);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -448,12 +468,25 @@
   font-size: 0.85rem;
   transition: all 0.3s ease;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .bottom-link:hover {
   color: #ffffff;
   transform: translateY(-1px);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure React Router Link components in bottom bar are clickable */
+.footer-bottom-bar a,
+.footer-bottom-bar Link {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  z-index: 10 !important;
 }
 
 .separator {

@@ -148,6 +148,7 @@
     min-width: 0;
     flex: 1 1 auto;
     max-width: 48%;
+    border-radius: 8px;
   }
   
   .hero-social {
@@ -252,11 +253,11 @@
 }
 
 .btn {
-  padding: 1rem 2rem;
+  padding: 0.875rem 1.75rem;
   font-size: 1rem;
   font-weight: 600;
-  border: 2px solid;
-  border-radius: 50px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -264,32 +265,33 @@
   align-items: center;
   justify-content: center;
   min-width: 140px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary {
-  background: var(--gradient-primary);
-  color: var(--color-text-white);
-  border-color: var(--color-primary);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
 }
 
 .btn-primary:hover {
-  background: var(--gradient-primary-hover);
-  color: var(--color-text-white);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-primary);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-border-primary);
+  background: #6b7280;
+  color: #ffffff;
+  border: none;
 }
 
 .btn-secondary:hover {
-  background: var(--gradient-primary);
-  color: var(--color-text-white);
+  background: #4b5563;
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-primary);
+  box-shadow: 0 8px 25px rgba(107, 114, 128, 0.3);
 }
 
 /* Social links */
@@ -498,6 +500,7 @@
     font-size: 0.9rem;
     min-width: 0;
     flex: 1 1 auto;
+    border-radius: 8px;
   }
   
   .hero-social {

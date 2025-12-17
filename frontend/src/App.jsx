@@ -1,6 +1,7 @@
 // Main App component for ASACODER landing page
 // This component will contain all the sections of the landing page
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
 import './App.css'
 import './components/MobileAnimations.css'
 
@@ -14,8 +15,12 @@ import Process from './components/Process'
 import Contact from './components/Contact'
 
 import ConnectionStatus from './components/ConnectionStatus'
-import AdminPanel from './components/AdminPanel'
 import Footer from './components/Footer'
+
+// Lazy load route components to avoid circular dependency issues
+const AdminPanel = lazy(() => import('./components/AdminPanel'))
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'))
+const TermsOfService = lazy(() => import('./components/TermsOfService'))
 
 // Main Landing Page Component
 const LandingPage = () => {
@@ -56,13 +61,45 @@ const LandingPage = () => {
   )
 }
 
+// Component to scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [pathname])
+
+  return null
+}
+
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/admin" element={<AdminPanel />} />
-      </Routes>
+      <ScrollToTop />
+      <Suspense fallback={
+        <div style={{ 
+          padding: '2rem', 
+          textAlign: 'center', 
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          color: 'white'
+        }}>
+          <div>
+            <h2>Loading...</h2>
+            <p>Please wait while we load the page.</p>
+          </div>
+        </div>
+      }>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+        </Routes>
+      </Suspense>
     </Router>
   )
 }

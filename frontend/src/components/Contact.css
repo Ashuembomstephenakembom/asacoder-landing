@@ -119,6 +119,11 @@
   cursor: not-allowed;
 }
 
+.submit-btn:focus {
+  outline: 2px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
+
 /* Submit button icon animation */
 .submit-btn svg {
   transition: all 0.3s ease;
@@ -460,8 +465,16 @@
   }
 
   .submit-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    width: 100%;
+    min-height: 42px;
+    /* Keep original colors - only adjust size/layout */
+  }
+
+  .submit-btn:active:not(:disabled) {
+    transform: scale(0.98);
+    /* Keep original box-shadow */
   }
 
   .contact-info-item {

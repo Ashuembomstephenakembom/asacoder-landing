@@ -1,11 +1,14 @@
 // Navbar component for ASACODER landing page
 // This component provides navigation and is sticky at the top
 import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import logo from '../assets/logo.png'
 import './Navbar.css'
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -18,6 +21,11 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [location.pathname])
 
   // Toggle mobile menu
   const toggleMenu = () => {
@@ -32,6 +40,21 @@ const Navbar = () => {
       return
     }
 
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/')
+      setIsMenuOpen(false)
+      // Wait for navigation, then scroll to section
+      setTimeout(() => {
+        const section = document.getElementById(id)
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+      return
+    }
+
+    // If we're on the home page, just scroll to section
     const section = document.getElementById(id)
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' })
@@ -54,7 +77,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         {/* Logo/Brand */}
-        <div className="navbar-brand">
+        <div className="navbar-brand" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
           <div className="brand-logo">
             <img src={logo} alt="ASACODER Logo" className="brand-icon" />
           </div>

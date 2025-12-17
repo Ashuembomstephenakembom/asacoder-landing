@@ -55,27 +55,6 @@ const AdminPanel = () => {
     return backendUrl.replace(/\/$/, '')
   }
 
-  // Authentication
-  const handleLogin = async (e) => {
-    e.preventDefault()
-    if (adminPassword === 'asacoder2025') { // Change this to a secure password
-      setIsAuthenticated(true)
-      localStorage.setItem('adminAuthenticated', 'true')
-      fetchMessages()
-    } else {
-      alert('Incorrect password')
-    }
-  }
-
-  // Check if already authenticated
-  useEffect(() => {
-    const authenticated = localStorage.getItem('adminAuthenticated')
-    if (authenticated === 'true') {
-      setIsAuthenticated(true)
-      fetchMessages()
-    }
-  }, [fetchMessages])
-
   // Fetch messages and stats from backend
   const fetchMessages = useCallback(async () => {
     try {
@@ -125,6 +104,27 @@ const AdminPanel = () => {
       setIsLoading(false)
     }
   }, [])
+
+  // Authentication
+  const handleLogin = async (e) => {
+    e.preventDefault()
+    if (adminPassword === 'asacoder2025') { // Change this to a secure password
+      setIsAuthenticated(true)
+      localStorage.setItem('adminAuthenticated', 'true')
+      fetchMessages()
+    } else {
+      alert('Incorrect password')
+    }
+  }
+
+  // Check if already authenticated
+  useEffect(() => {
+    const authenticated = localStorage.getItem('adminAuthenticated')
+    if (authenticated === 'true') {
+      setIsAuthenticated(true)
+      fetchMessages()
+    }
+  }, [fetchMessages])
 
   // Test email configuration
   const testEmailConfig = async () => {
