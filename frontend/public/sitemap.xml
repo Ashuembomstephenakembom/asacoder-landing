@@ -24,6 +24,14 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Projects Section -->
+  <url>
+    <loc>https://asacoder.xyz/#projects</loc>
+    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Process Section -->
   <url>
     <loc>https://asacoder.xyz/#process</loc>
@@ -45,7 +53,7 @@
     <loc>https://asacoder.xyz/privacy-policy</loc>
     <lastmod>2025-01-27T12:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.5</priority>
   </url>
   
   <!-- Terms of Service -->
@@ -53,14 +61,6 @@
     <loc>https://asacoder.xyz/terms-of-service</loc>
     <lastmod>2025-01-27T12:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- Admin Panel -->
-  <url>
-    <loc>https://asacoder.xyz/admin</loc>
-    <lastmod>2025-01-27T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.1</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>
