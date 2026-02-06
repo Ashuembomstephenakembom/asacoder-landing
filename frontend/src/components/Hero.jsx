@@ -29,7 +29,7 @@ const Hero = () => {
           
           {/* Main headline */}
           <h1 className="hero-title">
-            <span className="hero-name">ASACODER</span>
+            <span className="hero-name">Stephthecoder</span>
             <span className="hero-tagline">Professional Web Developer & Digital Solutions Expert</span>
           </h1>
           

@@ -1,0 +1,9 @@
+[33mcommit f69cb169ffc1824fb73c0de96ebe75e3090b5bdb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Akembom Stephen <akembomcedric@gmail.com>
+Date:   Thu Dec 18 01:02:35 2025 +0100
+
+    Create proper XML sitemap with all routes and update robots.txt
+
+ frontend/public/robots.txt  | 50 [32m++++[m[31m-----------------------------------------[m
+ frontend/public/sitemap.xml | 20 [32m+++++++++[m[31m---------[m
+ 2 files changed, 14 insertions(+), 56 deletions(-)
