@@ -1,6 +1,6 @@
 // Process component for ASACODER landing page
 // This section explains the workflow and methodology used for projects
-
+import { Link } from 'react-router-dom'
 import { MessagesSquare, ClipboardList, Rocket, Headphones } from 'lucide-react'
 import './Process.css'
 
@@ -95,14 +95,14 @@ const Process = () => {
           ))}
         </div>
 
-        {/* Process summary */}
+        {/* Process summary - internal link to contact */}
         <div className="process-summary">
           <div className="summary-content">
             <h3>Why This Process Works</h3>
             <p>
               This systematic approach ensures that every project is delivered on time, within budget, 
               and exceeds expectations. By following these proven steps, we minimize risks and maximize 
-              the success of your digital project.
+              the success of your digital project. <Link to="/#contact" className="process-internal-link">Get in touch</Link> to start yours.
             </p>
             <div className="summary-stats">
               <div className="stat-item">

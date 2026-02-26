@@ -1,5 +1,6 @@
 // About component for ASACODER landing page
 // This section showcases personal background, experience, and skills
+import { Link } from 'react-router-dom'
 import { Code2, LineChart, Megaphone, Laptop } from 'lucide-react'
 import './About.css'
 
@@ -42,6 +43,10 @@ const About = () => {
               I approach every project with a focus on results, user experience, and long-term success. 
               Whether it&apos;s developing a website, providing forex guidance, or teaching digital skills, 
               I ensure that my clients and students achieve their goals and exceed their expectations.
+            </p>
+            <p className="about-internal-links">
+              Explore my <Link to="/#services" className="about-link">services</Link> or{' '}
+              <Link to="/#contact" className="about-link">get in touch</Link> for a free consultation.
             </p>
           </div>
 

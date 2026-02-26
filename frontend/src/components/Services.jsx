@@ -1,6 +1,6 @@
 // Services component for ASACODER landing page
 // This section showcases the services and solutions offered
-
+import { Link } from 'react-router-dom'
 import { Globe, Megaphone, LineChart, Laptop } from 'lucide-react'
 import './Services.css'
 
@@ -67,11 +67,12 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Call to action */}
+        {/* Call to action - internal link to contact and process */}
         <div className="services-cta">
           <h3>Ready to Start Your Project?</h3>
           <p>
-            Let&apos;s discuss how I can help bring your ideas to life with custom digital solutions.
+            See <Link to="/#process" className="services-internal-link">how I work</Link> in 4 simple steps, then{' '}
+            <Link to="/#contact" className="services-internal-link">get a free consultation</Link>.
           </p>
           <button 
             className="btn btn-primary"

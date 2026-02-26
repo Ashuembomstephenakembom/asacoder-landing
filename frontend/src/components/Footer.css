@@ -1,8 +1,8 @@
 /* Footer component styles - Professional and responsive design */
 
 .footer {
-  background: var(--gradient-primary);
-  color: var(--color-text-white);
+  background: #393e46;
+  color: #fffff1;
   padding: 3rem 0 0 0;
   margin-top: auto;
   position: relative;
@@ -48,7 +48,7 @@
   right: -1rem;
   width: 1px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 241, 0.25), transparent);
 }
 
 .footer-brand {
@@ -58,36 +58,30 @@
 .footer-logo {
   font-size: 2rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fffff1;
   margin-bottom: 1rem;
   letter-spacing: 1px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .footer-tagline {
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #fffff1;
   margin-bottom: 1rem;
   line-height: 1.4;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .footer-description {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 241, 0.9);
   margin-bottom: 1rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .footer-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #fffff1;
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -99,7 +93,7 @@
   left: 0;
   width: 2rem;
   height: 2px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #fffff1;
   border-radius: 1px;
 }
 
@@ -117,26 +111,28 @@
 .footer-links a,
 .footer-links a:visited,
 .footer-links a:link {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 241, 0.9);
   text-decoration: none;
   font-size: 0.9rem;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   display: inline-block;
   position: relative;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  padding: 0.35rem 0.6rem;
+  margin: -0.35rem -0.6rem;
+  border-radius: 6px;
 }
 
 .footer-links a:hover {
-  color: #ffffff;
-  transform: translateX(5px);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #fffff1;
+  background: rgba(255, 255, 241, 0.18);
+  transform: translateX(4px);
 }
 
 /* Ensure React Router Link components are styled and clickable */
 .footer-links a,
 .footer-links .footer-link {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 241, 0.9) !important;
   text-decoration: none !important;
   cursor: pointer !important;
   pointer-events: auto !important;
@@ -145,9 +141,9 @@
 }
 
 .footer-links .footer-link:hover {
-  color: #ffffff !important;
-  transform: translateX(5px);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #fffff1 !important;
+  background: rgba(255, 255, 241, 0.18) !important;
+  transform: translateX(4px);
 }
 
 /* Contact Section */
@@ -163,22 +159,20 @@
   gap: 1rem;
   font-size: 0.9rem;
   padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 241, 0.06);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 241, 0.15);
   transition: all 0.3s ease;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fffff1;
 }
 
 .contact-item:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 241, 0.1);
+  border-color: rgba(255, 255, 241, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  color: #fffff1;
 }
 
 .contact-icon {
@@ -190,7 +184,7 @@
   justify-content: center;
   border-radius: 50%;
   font-size: 1.3rem;
-  color: var(--color-text-white);
+  color: #fffff1;
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
@@ -232,7 +226,7 @@
 
 /* Social Media Section */
 .footer-social {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 241, 0.2);
   padding-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -240,7 +234,7 @@
 .social-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #fffff1;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -254,7 +248,7 @@
 
 /* Footer Social Section */
 .footer-social-section {
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(255, 255, 241, 0.2);
   padding-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -269,15 +263,14 @@
   transform: translateX(-50%);
   width: 50px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 241, 0.4), transparent);
 }
 
 .social-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #fffff1;
   margin-bottom: 1.5rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Hero-style social links for footer */
@@ -291,12 +284,12 @@
 .hero-social .social-link {
   width: 52px;
   height: 52px;
-  border: 1px solid rgba(229, 231, 235, 0.8);
+  border: 1px solid rgba(255, 255, 241, 0.5);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #f9fafb;
+  color: #fffff1;
   font-size: 1.4rem;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -306,10 +299,133 @@
 }
 
 .hero-social .social-link:hover {
-  border-color: #ffffff;
-  background: rgba(15, 23, 42, 0.15);
+  border-color: #fffff1;
+  background: rgba(255, 255, 241, 0.1);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Follow Me – brand color as circle background, white icon on top */
+.hero-social .social-link-whatsapp,
+.footer-social-section .social-link-whatsapp {
+  background: #25D366 !important;
+  color: #ffffff !important;
+  border-color: #25D366 !important;
+}
+.hero-social .social-link-whatsapp:hover {
+  background: #1fa855 !important;
+  color: #ffffff !important;
+  border-color: #1fa855 !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.hero-social .social-link-telegram,
+.footer-social-section .social-link-telegram {
+  background: #0088cc !important;
+  color: #ffffff !important;
+  border-color: #0088cc !important;
+}
+.hero-social .social-link-telegram:hover {
+  background: #0077b3 !important;
+  color: #ffffff !important;
+  border-color: #0077b3 !important;
+  box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
+}
+
+.hero-social .social-link-facebook,
+.footer-social-section .social-link-facebook {
+  background: #1877F2 !important;
+  color: #ffffff !important;
+  border-color: #1877F2 !important;
+}
+.hero-social .social-link-facebook:hover {
+  background: #166fe5 !important;
+  color: #ffffff !important;
+  border-color: #166fe5 !important;
+  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+}
+
+.hero-social .social-link-twitter,
+.footer-social-section .social-link-twitter {
+  background: #1DA1F2 !important;
+  color: #ffffff !important;
+  border-color: #1DA1F2 !important;
+}
+.hero-social .social-link-twitter:hover {
+  background: #0d8bd9 !important;
+  color: #ffffff !important;
+  border-color: #0d8bd9 !important;
+  box-shadow: 0 6px 20px rgba(29, 161, 242, 0.4);
+}
+
+.hero-social .social-link-instagram,
+.footer-social-section .social-link-instagram {
+  background: #E1306C !important;
+  color: #ffffff !important;
+  border-color: #E1306C !important;
+}
+.hero-social .social-link-instagram:hover {
+  background: #c42d5d !important;
+  color: #ffffff !important;
+  border-color: #c42d5d !important;
+  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+}
+
+.hero-social .social-link-linkedin,
+.footer-social-section .social-link-linkedin {
+  background: #0A66C2 !important;
+  color: #ffffff !important;
+  border-color: #0A66C2 !important;
+}
+.hero-social .social-link-linkedin:hover {
+  background: #094d92 !important;
+  color: #ffffff !important;
+  border-color: #094d92 !important;
+  box-shadow: 0 6px 20px rgba(10, 102, 194, 0.4);
+}
+
+.hero-social .social-link-github,
+.footer-social-section .social-link-github {
+  background: #24292e !important;
+  color: #ffffff !important;
+  border-color: #24292e !important;
+}
+.hero-social .social-link-github:hover {
+  background: #171a1d !important;
+  color: #ffffff !important;
+  border-color: #171a1d !important;
+  box-shadow: 0 6px 20px rgba(36, 41, 46, 0.5);
+}
+
+/* Follow Me – smaller icons on mobile, keep brand colors */
+@media (max-width: 768px) {
+  .hero-social {
+    gap: 0.6rem;
+  }
+  .hero-social .social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  .hero-social .social-link svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-social {
+    gap: 0.5rem;
+  }
+  .hero-social .social-link {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .hero-social .social-link svg {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 
 /* Original footer social link styles (keeping for compatibility) */
@@ -319,13 +435,13 @@
   align-items: center;
   justify-content: center;
   padding: 1.2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 241, 0.06);
   border-radius: 16px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 241, 0.9);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   min-width: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 241, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -337,7 +453,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 241, 0.1), transparent);
   transition: left 0.5s ease;
 }
 
@@ -426,10 +542,10 @@
 
 /* Footer Bottom Bar - Full Width */
 .footer-bottom-bar {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  background: #393e46;
   width: 100%;
   padding: 0.5rem 0;
-  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid rgba(255, 255, 241, 0.2);
   min-height: auto;
   position: relative;
 }
@@ -441,7 +557,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 241, 0.3), transparent);
 }
 
 .footer-bottom-container {
@@ -463,11 +579,10 @@
 
 
 .bottom-link {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 241, 0.9);
   text-decoration: none;
   font-size: 0.85rem;
   transition: all 0.3s ease;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -476,9 +591,8 @@
 }
 
 .bottom-link:hover {
-  color: #ffffff;
+  color: #fffff1;
   transform: translateY(-1px);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Ensure React Router Link components in bottom bar are clickable */
@@ -490,19 +604,17 @@
 }
 
 .separator {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 241, 0.5);
   font-size: 0.85rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .copyright {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #fffff1;
   margin: 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .heart-icon {
@@ -581,7 +693,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 241, 0.2), transparent);
   }
   
   .footer-section:nth-child(2)::after,
@@ -766,7 +878,7 @@
 .social-link:focus,
 .contact-link:focus,
 .bottom-link:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #fffff1;
   outline-offset: 2px;
   border-radius: 4px;
 }

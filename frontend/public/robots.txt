@@ -1,8 +1,11 @@
+# ASACODER - www.asacoder.xyz
+# https://www.asacoder.xyz/robots.txt
+
 User-agent: *
 Allow: /
 
-# Disallow admin panel
+# Admin panel - no indexing
 Disallow: /admin
 
-# Sitemap
-Sitemap: https://asacoder.xyz/sitemap.xml
+# Sitemap location
+Sitemap: https://www.asacoder.xyz/sitemap.xml

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { lazy, Suspense, useEffect } from 'react'
 import './App.css'
 import './components/MobileAnimations.css'
+import SeoHead from './components/SeoHead'
 
 // Import all the components (we'll create these next)
 import Navbar from './components/Navbar'
@@ -61,19 +62,27 @@ const LandingPage = () => {
   )
 }
 
-// Component to scroll to top on route change
+// Scroll to top on route change; on home with hash, scroll to section (internal linking)
 const ScrollToTop = () => {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    // Don't scroll for static files (they're handled by the server)
     const staticFileExtensions = ['.xml', '.txt', '.jpg', '.jpeg', '.png', '.gif', '.svg', '.ico', '.css', '.js', '.json', '.woff', '.woff2', '.ttf', '.eot', '.html']
     const isStaticFile = staticFileExtensions.some(ext => pathname.endsWith(ext))
-    
+
+    if (pathname === '/' && hash) {
+      const id = hash.replace(/^#/, '')
+      const el = document.getElementById(id)
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
+        return
+      }
+    }
+
     if (!isStaticFile) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
-  }, [pathname])
+  }, [pathname, hash])
 
   return null
 }
@@ -90,6 +99,7 @@ const StaticFileHandler = () => {
 function App() {
   return (
     <Router>
+      <SeoHead />
       <ScrollToTop />
       <Suspense fallback={
         <div style={{ 
