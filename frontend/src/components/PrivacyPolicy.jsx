@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2>1. Introduction</h2>
             <p>
-              Welcome to ASACODER ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience on our website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at <strong>asacoder.xyz</strong>.
+              Welcome to ASACODER ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience on our website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at <strong>www.asacoder.xyz</strong>.
             </p>
           </section>
 
@@ -132,7 +132,7 @@ const PrivacyPolicy = () => {
             <ul>
               <li><strong>Email:</strong> <a href="mailto:stephen@asaofficial.org">stephen@asaofficial.org</a></li>
               <li><strong>Phone:</strong> +237 653 180 273</li>
-              <li><strong>Website:</strong> <a href="https://asacoder.xyz">asacoder.xyz</a></li>
+              <li><strong>Website:</strong> <a href="https://www.asacoder.xyz">www.asacoder.xyz</a></li>
             </ul>
           </section>
 

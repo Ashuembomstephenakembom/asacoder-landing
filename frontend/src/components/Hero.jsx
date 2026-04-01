@@ -1,5 +1,6 @@
 // Hero component for ASACODER landing page
 // This is the first section visitors see - the main headline and call-to-action
+import { Link } from 'react-router-dom'
 import { Github, Linkedin, MessageCircle, Send } from 'lucide-react'
 import heroPhoto from '../assets/Ashuembom stephen akembom .jpg'
 import './Hero.css'
@@ -35,17 +36,17 @@ const Hero = () => {
           
           {/* Description */}
           <p className="hero-description">
-            Expert React.js and Node.js developer specializing in modern web applications, forex trading mentorship, digital marketing services, and ICT training. Transform your ideas into powerful digital solutions.
+            Expert React.js and Node.js developer specializing in modern web applications, forex trading mentorship, digital marketing services, and ICT training. Explore my <Link to="/#services">services</Link>, review recent <Link to="/#projects">projects</Link>, and <Link to="/#contact">get in touch</Link> for your next build.
           </p>
           
           {/* Call-to-action buttons */}
           <div className="hero-actions">
-            <button className="btn btn-primary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
+            <Link className="btn btn-primary" to="/#contact">
               Hire Me
-            </button>
-            <button className="btn btn-secondary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
-              Get in Touch
-            </button>
+            </Link>
+            <Link className="btn btn-secondary" to="/#services">
+              View Services
+            </Link>
           </div>
           
           {/* Social links */}

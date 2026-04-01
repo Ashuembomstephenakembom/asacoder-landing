@@ -74,12 +74,9 @@ const Services = () => {
             See <Link to="/#process" className="services-internal-link">how I work</Link> in 4 simple steps, then{' '}
             <Link to="/#contact" className="services-internal-link">get a free consultation</Link>.
           </p>
-          <button 
-            className="btn btn-primary"
-            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-          >
+          <Link className="btn btn-primary" to="/#contact">
             Get Free Consultation
-          </button>
+          </Link>
         </div>
       </div>
     </section>

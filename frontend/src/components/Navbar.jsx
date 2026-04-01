@@ -1,13 +1,12 @@
 // Navbar component for ASACODER landing page
 // This component provides navigation and is sticky at the top
 import { useState, useEffect } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import logo from '../assets/logo.jpg'
 import './Navbar.css'
 
 const Navbar = () => {
-  const navigate = useNavigate()
   const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -32,67 +31,59 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  // Handle navigation click (scroll or external link)
-  const handleNavClick = (id) => {
-    if (id === 'store') {
-      window.open('https://selar.com/m/traderlibrary', '_blank')
-      setIsMenuOpen(false)
-      return
-    }
+  const handleSectionLinkClick = (event, id) => {
+    setIsMenuOpen(false)
 
-    // If we're not on the home page, navigate to home first
     if (location.pathname !== '/') {
-      navigate('/')
-      setIsMenuOpen(false)
-      // Wait for navigation, then scroll to section
-      setTimeout(() => {
-        const section = document.getElementById(id)
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' })
-        }
-      }, 100)
       return
     }
 
-    // If we're on the home page, just scroll to section
+    event.preventDefault()
     const section = document.getElementById(id)
     if (section) {
+      window.history.replaceState(null, '', id === 'hero' ? '/' : `/#${id}`)
       section.scrollIntoView({ behavior: 'smooth' })
     }
-    setIsMenuOpen(false)
   }
 
   // Navigation links
   const navLinks = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'store', label: 'Store / eBooks' },
-    { id: 'process', label: 'Process' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'hero', label: 'Home', to: '/' },
+    { id: 'about', label: 'About', to: '/#about' },
+    { id: 'services', label: 'Services', to: '/#services' },
+    { id: 'projects', label: 'Projects', to: '/#projects' },
+    { id: 'store', label: 'Store / eBooks', href: 'https://selar.com/m/traderlibrary', external: true },
+    { id: 'process', label: 'Process', to: '/#process' },
+    { id: 'contact', label: 'Contact', to: '/#contact' }
   ]
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         {/* Logo/Brand */}
-        <div className="navbar-brand" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+        <Link to="/" className="navbar-brand" aria-label="ASACODER home">
           <div className="brand-logo">
             <img src={logo} alt="ASACODER Logo" className="brand-icon" />
           </div>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <ul className="navbar-nav">
           {navLinks.map((link) => (
             <li key={link.id} className="nav-item">
-              <button
-                className="nav-link"
-                onClick={() => handleNavClick(link.id)}
-              >
-                {link.label}
-              </button>
+              {link.external ? (
+                <a className="nav-link" href={link.href} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  className="nav-link"
+                  to={link.to}
+                  onClick={(event) => handleSectionLinkClick(event, link.id)}
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -107,12 +98,19 @@ const Navbar = () => {
           <ul className="mobile-nav">
             {navLinks.map((link) => (
               <li key={link.id} className="mobile-nav-item">
-                <button
-                  className="mobile-nav-link"
-                  onClick={() => handleNavClick(link.id)}
-                >
-                  {link.label}
-                </button>
+                {link.external ? (
+                  <a className="mobile-nav-link" href={link.href} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    className="mobile-nav-link"
+                    to={link.to}
+                    onClick={(event) => handleSectionLinkClick(event, link.id)}
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

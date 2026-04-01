@@ -24,7 +24,7 @@ const TermsOfService = () => {
           <section>
             <h2>1. Agreement to Terms</h2>
             <p>
-              By accessing or using the ASACODER website located at <strong>asacoder.xyz</strong> (the "Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
+              By accessing or using the ASACODER website located at <strong>www.asacoder.xyz</strong> (the "Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
             </p>
           </section>
 
@@ -143,7 +143,7 @@ const TermsOfService = () => {
             <ul>
               <li><strong>Email:</strong> <a href="mailto:stephen@asaofficial.org">stephen@asaofficial.org</a></li>
               <li><strong>Phone:</strong> +237 653 180 273</li>
-              <li><strong>Website:</strong> <a href="https://asacoder.xyz">asacoder.xyz</a></li>
+              <li><strong>Website:</strong> <a href="https://www.asacoder.xyz">www.asacoder.xyz</a></li>
             </ul>
           </section>
 
