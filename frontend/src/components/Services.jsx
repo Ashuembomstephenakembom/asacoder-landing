@@ -2,6 +2,8 @@
 // This section showcases the services and solutions offered
 import { Link } from 'react-router-dom'
 import { Globe, Megaphone, LineChart, Laptop } from 'lucide-react'
+import digitalMarketingImage from '../assets/Digital-Marketing-Vs-Web-Development.webp'
+import forexEducationImage from '../assets/forex-education-courses-.png'
 import './Services.css'
 
 const Services = () => {
@@ -34,7 +36,18 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="services">
+    <section
+      id="services"
+      className="services"
+      style={{
+        '--services-digital-image': `url("${digitalMarketingImage}")`,
+        '--services-forex-image': `url("${forexEducationImage}")`
+      }}
+    >
+      <div className="services-background" aria-hidden="true">
+        <div className="services-background-image services-background-image-left"></div>
+        <div className="services-background-image services-background-image-right"></div>
+      </div>
       <div className="section-container">
         {/* Section header */}
         <div className="section-header">
